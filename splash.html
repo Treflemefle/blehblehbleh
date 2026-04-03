@@ -1,0 +1,315 @@
+<html>
+   <head>
+      <!-- Page code made using codepen by Aldana Onair at codepen: https://codepen.io/Aldana-onair/pen/PwZpBmw and modified by her.nekoweb.org! --->
+      <title>殻ノ少女</title>
+      <!----Meta tags ------>
+      <link rel="icon" type="image/x-icon" href="https://file.garden/aOCBrSuXPw8tOlnO/crown.png" />
+      <meta name="viewport" content="width=device-width, initial-scale=0.7, maximum-scale=0.7" />
+      <meta charset="UTF-8" />
+      <meta property=“og:image” content=“https://file.garden/aOCBrSuXPw8tOlnO/Preview.jpeg” />
+      <!------Style-------->
+      <style>
+         @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+         body {
+         background-color: black;
+         background-image: url("https://i.redd.it/kkzlauom3d5d1.jpeg");
+         background-size: cover;
+         background-repeat: no-repeat;
+         background-position: center 0;
+         margin: 0;
+         overflow: hidden;
+         display: flex;
+         justify-content: center;
+         }
+         /*Change look of dialogue here*/
+         .dialogue-box {
+         width: 100%;
+         height: 30%;
+         aspect-ratio: 6 / 1;
+         border-radius: 30px;
+         background: #fa5c84;
+         background: linear-gradient(0deg, rgba(250, 92, 132, 0.74) 0%, rgba(250, 92, 132, 0.43) 87%, rgba(255, 240, 240, 0) 100%), url(https://files.catbox.moe/ur4jys.png);
+background-position: center, bottom left;
+background-repeat: no-repeat, no-repeat;
+background-size: cover, contain;
+         z-index: 999;
+         position: absolute;
+         bottom: 0;
+         font-size: 4vh;
+         user-select: none;
+
+         }
+         .dialogue-box * {
+         margin: 0;
+         }
+         /*Sizing and positioning of the character faces here*/
+         .faces{
+         position: fixed;
+         left: 0px;
+         bottom: 0px;
+         height: auto;
+         width:23%;
+		    transform:translateX(-40px);
+         object-fit: contain;
+         filter:drop-shadow(0px 0px 5px grey);
+         z-index: 1;
+
+		    
+		   
+         }
+         /*Speech text*/
+         .dialogue-text {
+         padding: 2vh;
+         font-family: ms gothic, sans-serif;
+         color: white;
+         float:right;
+         width:77%;
+         text-shadow: 2px 2px black;
+         }
+         /*Character namee*/
+         .name {
+         margin-top:-20px;
+         color:hotpink;
+         text-shadow: 2px 2px black;
+         /*
+         text-shadow: 0 1px black, 1px 0px black, 0 -1px black, -1px 0px black, 1px -1px black, -1px 1px black, 1px 1px black, -1px -1px black;
+         */
+         margin-bottom:30px;
+         }
+         }
+         .none {
+         display: none;
+         }
+         /*that little thingi that you click on at the bottom right corner that I was too lazy to fix up*/
+         .caret {
+         color: white;
+         fill: white;
+         position: absolute;
+         width: 5vh;
+         height: auto;
+         bottom: 1.25vh;
+         right: 2vh;
+         opacity: 0;
+         transition: opacity 500ms ease;
+         animation: bounce 1s infinite ease-in-out both;
+         }
+         .caret.active {
+         opacity: 1;
+         }
+         @keyframes move-right {
+         to {
+         background-position: 100%;
+         }
+         }
+         @keyframes bounce {
+         50% {
+         transform: translateY(-10%);
+         }
+         to {
+         transform: translateY(0);
+         }
+         }
+         /* characters */
+         .characters {
+         display: flex;
+         justify-content: space-evenly;
+         }
+         .characters img {
+         height: 100%;
+         width: auto;
+         position: absolute;
+         bottom: 0;
+         user-select: none;
+         }
+         /*The wrapper that makes the options float in the middle, should only change the background color/remove it for stylistic choice*/
+         #dataList-wrapper {
+         display: none; /* Hidden by default */
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(0, 0, 0, 0.5);
+         justify-content: center; 
+         align-items: center; 
+         z-index: 10000; 
+         }
+         #dataList{
+         list-style:none;
+         }
+         /*Button holder, change fontsize  here*/
+         #dataList li {
+         text-align: center;
+         text-shadow: 2px 2px black;
+         font-size:26px!important;
+         }
+         /*Button links*/
+         #dataList a {
+         color: white ;
+         font-family:ms gothic;
+         font-size:26px!important;
+         text-decoration: none;
+         border-radius:50px;
+         border: 10px solid white;
+         background-color:rgba(255, 255, 255, 0.26);
+         display: inline-block;	padding:20px;
+         width:900px;
+         }
+         /*Makes the button pink when hovered over*/
+         #dataList a:hover {
+         background-color:rgba(252, 26, 75, 0.26);
+         }
+      </style>
+   </head>
+   <!-----Website start------>
+   <body>
+      <!-----Character div-------->
+      <div class="characters">
+         <img draggable="false" src="" alt="">
+      </div>
+      <!-----Options pop up div-------->
+      <div id="dataList-wrapper"style="display:none;">
+         <ul id="dataList" ></ul>
+      </div>
+      <!-----Dialogue div-------->
+      <div class="dialogue-box">
+         <div class="faces">
+            <img draggable="false" src="" alt="" style="width:100%;height:auto;"/>
+         </div>
+         <!-----Character face div-------->
+         <div class="character-dialoge"></div>
+         <div class="dialogue-text">
+            <h3 class="name"></h3>
+            <p class="text"></p>
+            <div class="caret" ...> . . .  </div>
+         </div>
+      </div>
+      <!-----Script for whole page-------->
+      <script>
+         const $name = document.querySelector(".name");
+         const $text = document.querySelector(".text");
+         const $caret = document.querySelector(".caret");
+         const $characterImg = document.querySelector(".characters img");
+         const $facesImg = document.querySelector(".faces img"); 
+         
+         let step = 0;
+         let counter, drawing;
+         // Everything inside of const storyDate is the only thing you need to change in this script to customize the dialogue/options
+         //Name is the name of character
+         //Text is the dialogue in question
+         //face is the expression on the left side of the text, just change the link to any image you want
+         //sprite is the half body sprite, change url to any sprite you want
+         //You can add of remove as many of these prompts as you want, and even remove a const like the face or text if thats what you want
+         const storyData = [
+           {
+             name: " 【 シャルロット 】",
+             text: "「This is a test run!」",
+             face:"https://files.catbox.moe/g3nebf.png",
+             sprite: "https://files.catbox.moe/g2g6eg.png"
+           },
+           {
+             name: "【 シャルロット 】",
+             text: "「Currently shows the dialouge of one character」",
+             face:"https://files.catbox.moe/6spuga.png",
+             sprite: "https://files.catbox.moe/fa3gte.png"
+           },
+           {
+             name: "【 シャルロット 】",
+             text: "「And also opens a options menu on the last dialogue, each option can redirect to a new page」",
+             face:"https://files.catbox.moe/a74ren.png",
+             sprite: "https://files.catbox.moe/ocrjq9.png"
+           },
+           {
+             name: "【 シャルロット 】",
+             text: "「YIPEEEEEE」",
+             face:"https://files.catbox.moe/a74ren.png",
+             sprite: "https://files.catbox.moe/ocrjq9.png"
+           },
+           {
+             name: "【 シャルロット 】",
+             text: "Now, pick an option!",
+             choices: [
+               { text: "Go to another page.....", href: "splash-2.html" }
+             ]
+           }
+         ];
+         const wrapper = document.getElementById('dataList-wrapper');
+         const list = document.getElementById('dataList');
+         
+         function showChoices(choices) {
+           list.innerHTML = '';
+         
+           choices.forEach(choice => {
+             const li = document.createElement('li');
+             const a = document.createElement('a');
+         
+             a.textContent = choice.text;
+             a.href = choice.href;
+         
+             li.appendChild(a);
+             list.appendChild(li);
+           });
+         
+           wrapper.style.display = 'flex';
+         }
+         	
+         function update() {
+           const data = storyData[step];
+           $name.textContent = data.name;
+         
+           if (data.sprite) {
+             $characterImg.src = data.sprite;
+             $characterImg.style.display = "block";
+           } else {
+             $characterImg.style.display = "none";
+           }
+         	
+         if (data.face) {
+           $facesImg.src = data.face; 
+           $facesImg.style.display = "block";
+         } else {
+           $facesImg.style.display = "none";
+         }
+           counter = 0;
+           drawing = setInterval(() => {
+             $text.textContent += data.text[counter];
+             counter++;
+             if (counter >= data.text.length) {
+               clearInterval(drawing);
+               if (step !== storyData.length - 1) {
+                 $caret.classList.add("active");
+               }
+               drawing = null;
+             }
+           }, 50);
+         }
+         
+         update();
+         document.addEventListener("click", () => {
+           if (drawing) {
+             clearInterval(drawing);
+             drawing = null;
+             $text.textContent = storyData[step].text;
+             if (step !== storyData.length - 1) {
+               $caret.classList.add("active");
+             }
+             return;
+           }
+         
+           if (step === storyData.length - 1) {
+             const data = storyData[step];
+             if (data.choices) {
+               showChoices(data.choices);
+             }
+             return;
+           }
+         
+           $caret.classList.remove("active");
+           $text.textContent = "";
+           step++;
+           update();
+         });
+         	
+      </script>	
+   </body>
+</html>

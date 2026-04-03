@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <style>
+         * {
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         image-rendering: pixelated;
+         color:var(--Primary-color);
+         }
+         @font-face {
+         font-family: 'basiic';
+         src: url("https://dl.dropbox.com/scl/fi/wd4ip5in43996hewlfcsy/basiic.ttf?rlkey=qcv7ps79k1t14kueko9cpdbfo&st=7od50azr&dl=0");
+         }
+         @font-face {
+         font-family: 'script';
+         src: url("https://dl.dropbox.com/scl/fi/ncr17693piksqwemt4ts5/PF-Pixelscript-Pro-Regular.ttf?rlkey=2de2wgfctpvhit579zhu77il8&st=azkeule8&dl=0");
+         }
+		 
+         body{
+		    background-color:transparent;
+         }
+         table {
+         width: 100%; 
+         table-layout: fixed;
+         height:100vh;
+         border:0px;
+         color:black;
+         border-spacing: 3px;
+         }
+         td {
+         text-align: center;
+         text-transform: uppercase;
+         font-family:'basiic';
+background: #ffffff;
+background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(235, 229, 229, 1) 100%);
+         border:1px solid #636363;
+         }
+         td:has(.date) {
+         background-color:#ded9dd;
+         text-indent: -0.5px;
+         }
+         .date strong {
+         color:var(--Color-1);
+         }
+         .month{
+         background: linear-gradient(to bottom, #ffffff 0%, #e0dbdc 50%, #e0dbdc 51%, white 100%);
+         box-shadow: 2px 3px 3px inset #ffffff, -1px -1px 1px inset grey;
+         font-family:'basiic';
+         text-shadow: 0 1px white, 1px 0px white, 0 -1px white, -1px 0px white, 1px -1px white, -1px 1px white, 1px 1px white, -1px -1px white;
+         font-size:1em;
+         }
+         .month strong {
+         color: black;
+         letter-spacing: 4.6px;
+         align-items: center;
+         }
+         .week-1, .week-2, .week-3, .week-4, .week-5, .week-6, .week-7 {
+         color: white;
+         font-weight: bold;
+background: #faf7f7;
+background: linear-gradient(0deg, rgba(250, 247, 247, 1) 0%, rgba(237, 232, 232, 1) 100%);
+         text-shadow: 0 1px black, 1px 0px black, 0 -1px black, -1px 0px black, 1px -1px black, -1px 1px black, 1px 1px black, -1px -1px black;
+         border-color:#636363;
+         }
+      </style>
+      <script>
+         monthnames = new Array(
+         "January",
+         "Februrary",
+         "March",
+         "April",
+         "May",
+         "June",
+         "July",
+         "August",
+         "September",
+         "October",
+         "November",
+         "Decemeber");
+         var linkcount=0;
+         function addlink(month, day, href) {
+         var entry = new Array(3);
+         entry[0] = month;
+         entry[1] = day;
+         entry[2] = href;
+         this[linkcount++] = entry;
+         }
+         Array.prototype.addlink = addlink;
+         linkdays = new Array();
+         monthdays = new Array(12);
+         monthdays[0]=31;
+         monthdays[1]=28;
+         monthdays[2]=31;
+         monthdays[3]=30;
+         monthdays[4]=31;
+         monthdays[5]=30;
+         monthdays[6]=31;
+         monthdays[7]=31;
+         monthdays[8]=30;
+         monthdays[9]=31;
+         monthdays[10]=30;
+         monthdays[11]=31;
+         todayDate=new Date();
+         thisday=todayDate.getDay();
+         thismonth=todayDate.getMonth();
+         thisdate=todayDate.getDate();
+         thisyear=todayDate.getYear();
+         thisyear = thisyear % 100;
+         thisyear = ((thisyear < 50) ? (2000 + thisyear) : (1900 + thisyear));
+         if (((thisyear % 4 == 0)
+         && !(thisyear % 100 == 0))
+         ||(thisyear % 400 == 0)) monthdays[1]++;
+         startspaces=thisdate;
+         while (startspaces > 7) startspaces-=7;
+         startspaces = thisday - startspaces + 1;
+         if (startspaces < 0) startspaces+=7;
+         document.write("<table border=1");
+         document.write("bordercolor=black><font color=black>");
+         document.write("<tr><td class='month' colspan=7><center><strong>"
+         + monthnames[thismonth] + " " + thisyear
+         + "</strong></center></font></td></tr>");
+         document.write("<tr>");
+         document.write("<td align=center class='week-1'>日</td>");
+         document.write("<td align=center class='week-2'>月</td>");
+         document.write("<td align=center class='week-3'>火</td>");
+         document.write("<td align=center class='week-4'>水</td>");
+         document.write("<td align=center class='week-5'>木</td>");
+         document.write("<td align=center class='week-6'>金</td>");
+         document.write("<td align=center class='week-7'>土</td>");
+         document.write("</tr>");
+         document.write("<tr>");
+         for (s=0;s<startspaces;s++) {
+         document.write("<td> </td>");
+         }
+         count=1;
+         while (count <= monthdays[thismonth]) {
+         for (b = startspaces;b<7;b++) {
+         linktrue=false;
+         document.write("<td>");
+         for (c=0;c<linkdays.length;c++) {
+         if (linkdays[c] != null) {
+         if ((linkdays[c][0]==thismonth + 1) && (linkdays[c][1]==count)) {
+         document.write("<a href=\"" + linkdays[c][2] + "\">");
+         linktrue=true;
+         }
+         }
+         }
+         if (count==thisdate) {
+         document.write("<font color='FF0000' class='date'><strong>");
+         }
+         if (count <= monthdays[thismonth]) {
+         document.write(count);
+         }
+         else {
+         document.write(" ");
+         }
+         if (count==thisdate) {
+         document.write("</strong></font>");
+         }
+         if (linktrue)
+         document.write("</a>");
+         document.write("</td>");
+         count++;
+         }
+         document.write("</tr>");
+         document.write("<tr>");
+         startspaces=0;
+         }
+         document.write("</table></p>");	
+      </script>
+   </head>
+   <body>
+      <noscript>This calender iframe requires Javascript to run!</noscript>
+   </body>
+</html>

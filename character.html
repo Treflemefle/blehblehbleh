@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!--Code heavily referenced by codepen project at: https://codepen.io/Z_Garland/pen/OJBBVYg---->
+      <title>Character Page</title>
+      <link rel="icon" type="img/x-icon" href="http://decome.lolipop.jp/insyoku/kudamono/pic26.gif" />
+      <!--Basic Meta tags yipee----->
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <script>
+         window.addEventListener('load', function () {
+           const audio = document.getElementById('myAudio');
+           audio.play().catch(function (error) {
+             console.log('Autoplay prevented:', error);
+           });
+         });
+      </script>
+      <!----AUDIO file ------>
+      <audio id="myAudio" loop src="https://file.garden/aOCBrSuXPw8tOlnO/GETREADY.mp3"
+         autoplay></audio>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script>
+         $(document).ready(function() {
+           var last_player = 'kyu';
+           var locked = false;
+         
+           var $chars = $('.rooster .character');
+         
+           $chars.mouseenter(function() {
+             if (locked) return;
+         
+             var player = $(this).data('player');
+         
+             $chars.removeClass('selected');
+             $(this).addClass('selected');
+         
+         const $playerOne = $('.player-one');
+         const name = $(this).data('name');
+         
+         $('.char-name').text(name);
+         
+         $playerOne.removeClass(last_player + ' show');
+         
+         void $playerOne[0].offsetWidth;
+         
+         $playerOne.addClass(player + ' show');
+         
+             last_player = player;
+           });
+         
+           $chars.click(function() {
+             var player = $(this).data('player');
+         
+             if (locked && player === last_player) {
+               locked = false;
+               $chars.removeClass('locked');
+               return;
+             }
+         
+             locked = true;
+         const name = $(this).data('name');
+         
+         $('.char-name').text(name);
+             $chars.removeClass('selected locked');
+             $(this).addClass('selected locked');
+         
+         const $playerOne = $('.player-one');
+         
+         $playerOne.removeClass(last_player + ' show');
+         void $playerOne[0].offsetWidth;
+         $playerOne.addClass(player + ' show');
+         
+             last_player = player;
+           });
+         
+           $(document).click(function(e) {
+             if (!$(e.target).closest('.character').length) {
+               locked = false;
+               $chars.removeClass('locked');
+             }
+           });
+         });
+      </script>
+      <style>
+		 
+         @font-face{
+         font-family: 'porcsha';
+         src:url(https://file.garden/aOCBrSuXPw8tOlnO/fonts/911porschav3.ttf) format('truetype');
+         }
+
+         /*Resets all elements with default margins/padding*/
+         *, ::before, ::after {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+         }
+         body {
+         background-color: white;
+         background-image:url(https://files.catbox.moe/80uym8.webp);
+         background-attachment: fixed;
+         background-size:100% 100%;
+         z-index:1;
+         }
+        .header h1{
+         text-align: center;
+		   margin:3px 0;
+		   font-size:30px;
+		font-family:'porcsha';
+		     letter-spacing: 10px;
+    text-shadow: 0 0 3px #e6dfe1, 0 0 3px #e6dfe1, 0 0 3px #e6dfe1, 0 0 3px #e6dfe1, 0 0 20px #e6dfe1, 0 0 3px #e6dfe1, 0 0 70px #e6dfe1;
+filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
+         }
+		 
+		 .header span{
+	         text-align: center;
+		   font-size:20px;
+		font-family:'porcsha';	
+			 		     letter-spacing: 10px;
+		 } 
+		 .header{
+			 background-image:url(https://files.catbox.moe/r25wyb.png);
+			 background-size:100% 100%;
+			 background-repeat:no-repeat;
+			 height:140px;
+			 position:absolute;
+			 width:100%;
+			 top:0;
+			 z-index:99;
+			 text-align:center;
+			 color:#8a8a8a;
+			 filter:opacity(0.9);
+		 }
+         .selected.locked {
+         filter:grayscale(0%)saturate(300%);
+         border:1px solid red;
+         z-index:100;
+         position:relative;
+         }
+         .rooster{
+         position:relative;
+		    margin-top:50px;
+         }
+         .flex {
+         display:flex;
+         flex-direction:row;
+         width:100%;
+         justify-content: flex-start;
+         gap:9px;
+         height:570px;
+         }
+         .row-1{
+         display:flex;
+         flex-direction:column;
+         justify-content: flex-start;
+         }
+         .row-2{
+         display:flex;
+         flex-direction:column;
+         justify-content:flex-start;
+         }
+         .row-3{
+         display:flex;
+         flex-direction:column;
+         justify-content: space-between;
+         margin-top:40px	;
+         }	 
+         .row-4{
+         display:flex;
+         flex-direction:column;
+         justify-content: space-between;
+         margin-top:40px	;
+         margin-bottom:10px;
+         }
+         .row-5{
+         display:flex;
+         flex-direction:column;
+         justify-content: flex-start;
+         margin-bottom:15px;	
+         }
+         .row-6{
+         display:flex;
+         flex-direction:column;
+         justify-content: flex-start;
+         gap:5px;
+         margin-bottom:15px;	
+         }
+         .player-two {
+         transform: scaleX(-1);
+         }
+         .character {
+         width: 60px;
+         aspect-ratio: 1 / 2.5; /* tweak as needed */
+         background-size: cover;
+         background-position: center;
+         background-repeat: no-repeat;
+         filter: grayscale(100%);
+         }
+         .character:hover{
+         filter:grayscale(0%)saturate(400%);
+         cursor: pointer;
+         }
+         /* ============CSS FOR CHARACTER FACES ON MENU==============*/		 
+         /*==== Kyu =====*/
+         .character.kyu {
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3465.jpeg);
+         background-position: -65px;
+         }		 
+         .player.kyu {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/kyuselectt.png);
+         background-position:-330px 60px;
+         }
+         /*==== Tengu =====*/
+         .character.tengu {
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/faveicons/nyotenguprincess.png);
+         }
+         .player.tengu {
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/nyonormal.png);
+         }
+         /*==== Shiki =====*/
+         .character.shiki {
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/faveicons/shikiichinose.png);
+         background-position: -40px;
+         }
+         .player.shiki {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/15.webp);
+         }
+         /*==== Yang =====*/
+         .character.yang {
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3554.jpeg);
+         background-position: -30px;
+         }
+         .player.yang {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/yangselectt.png);
+         }
+         /*==== dva =====*/
+         .character.dva{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3466.jpeg);
+         }
+         .player.dva {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/dvaselect.png);
+         }
+         /*==== Jinx =====*/
+         .character.jinx{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3567.jpeg);
+         }
+         .player.jinx {
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/jinxselect.png);
+         }
+         /*==== Quinn =====*/
+         .character.quinn{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/hq.jpeg);
+         }
+         .player.quinn {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/harleyselect.png);
+         }
+         /*==== Kotone =====*/
+         .character.kotone{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3569.jpeg);
+         background-position: -20px;
+         }
+         .player.kotone {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/kotoneselect.png);
+         }
+         /*==== Ada =====*/
+         .character.ada {
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/EEAE590C-4608-4A08-B83B-18E2304F9411.jpeg);
+         background-position: -70px;
+         }
+         .player.ada {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/adaselect.png);
+         }
+         /*==== Kaine =====*/
+         .character.kaine{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3559.jpeg);
+         background-position: -90px;
+         }
+         .player.kaine {
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/kaineselect.png);
+         }
+         /*==== Lili =====*/
+         .character.lili{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/liliroche.jpeg);
+         background-position: -30px;
+         }
+         .player.lili {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/liliselect.png);
+         }
+         /*==== Melty =====*/	 
+         .character.melty{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3407.jpeg);
+         background-position: -25px;
+         }
+         .player.melty {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/meltyselect.png);
+         }
+         /*==== Panty =====*/
+         .character.panty{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/panties.jpeg);
+         background-position: -25px;
+         }
+         .player.panty {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/pantyselect.png);
+         }	
+         /*==== Kangel =====*/
+         .character.kangel{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3550.jpeg);
+         background-position: -40px;
+         }
+         .player.kangel {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/kangelselect.png);
+         }
+         /*==== Rinoa =====*/
+         .character.rinoa{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/heartilly.jpeg);
+         background-position: -4px;
+         }
+         .player.rinoa {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/tifaslect.png);
+         }	
+         /*==== Marinette =====*/
+         .character.marinette{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3574.jpeg);
+         background-position: -1px;
+         }
+         .player.marinette {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/mariselect.png);
+         background-position:-40px;
+         }
+         /*==== Misa =====*/
+         .character.misa{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/missamane.jpeg);
+         background-position: -25px;
+         }
+         .player.misa {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/misaselect.png);
+         }
+         /*==== Felicia =====*/
+         .character.felicia{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3571.jpeg);
+         background-position: -20px;
+         }
+         .player.felicia {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/blackcatselect.png);
+         }
+         /*==== Kaori =====*/
+         .character.kaori{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3552.jpeg);
+         background-position: -60px;
+         }
+         .player.kaori {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/kaoriselect.png);
+         background-position:0px 30px;
+         }	
+         /*==== Moka =====*/
+         .character.moka{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/squaremoka.jpeg);
+         }
+         .player.moka {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/Moka.png);
+         }	
+         /*==== Tifa =====*/
+         .character.tifa{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/faveicons/tifalockhart.png);
+         }
+         .player.tifa {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/tifaslect.png);
+         }
+         /*==== Marin =====*/
+         .character.marin{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3514.jpeg);
+         }
+         .player.marin {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/marinselect.png);
+         }
+         /*==== Asuna =====*/
+         .character.asuna{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/asuna.jpeg);
+         background-position: -20px;  
+         }
+         .player.asuna {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/asunaselect.png);
+         }	
+         /*==== Zero =====*/
+         .character.zero{
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/IMG_3548.jpeg);
+         }
+         .player.zero {
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/Charselect/zeroselect.png);
+         }	
+         .characters {
+         display: flex;
+         justify-content: space-around;
+         align-items: center;
+         width:fit-content;
+         margin:0 auto;
+         gap:30px;
+         height:100vh;
+         width:100%;
+         }
+         .player {
+         height:100%;
+         width:100%;
+         background-repeat: no-repeat;
+         background-position: bottom;
+         background-size:cover;
+         mask-image: url("https://files.catbox.moe/67cmrq.webp");
+         mask-repeat: no-repeat;
+         mask-position: center;
+         mask-size: 100% 100%;
+         -webkit-mask-image: url(https://files.catbox.moe/67cmrq.webp");
+         -webkit-mask-repeat: no-repeat;
+         -webkit-mask-position: center;
+         -webkit-mask-size: 100% 100%;
+		    z-index:9999999;
+         }
+         .player.locked:hover{
+         transform:translateX(-10px);
+         }
+         .player-one {
+         opacity: 0;
+         transform: translateX(-100px);
+         }
+         .player-one.show {
+         animation: slideIn 0.4s ease forwards;
+         }
+         @keyframes slideIn {
+         from {
+         opacity: 0;
+         transform: translateX(-150px);
+         }
+         to {
+         opacity: 1;
+         transform: translateX(0);
+         }
+         }
+         .player.Charlotte {
+         background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/Bunnycharlotte.png);
+         background-position: -3px;
+         }
+
+         .character-wrapper{
+         padding:6px 3px;
+         margin-bottom: -29px; 
+         position:relative;
+         z-index:1;
+         filter: drop-shadow(-6px -7px 0px #000000);
+         }
+        
+         .character-wrapper-2{
+         padding:6px 3px;
+         margin-bottom: -25px; 
+         filter: drop-shadow(6px -7px 0px #000000);
+         }
+         .character-border{
+         padding:1.5px;
+         background-color:black;
+         clip-path: polygon(0 21%, 100% 0, 100% 81%, 0 100%);	
+         }
+         .character-border-2{
+         padding:1.5px;
+         background-color:black;
+         clip-path: polygon(0 0, 100% 17%, 100% 100%, 0 85%);
+         }
+         .info{
+         position:absolute;
+         z-index:1000;
+         top:300px;
+         left:0px;
+         background-image:url(https://files.catbox.moe/a29779.png);
+	    background-size:contain;
+		    background-repeat:no-repeat;
+         height:140px;
+         word-wrap: break-word;
+         width:350px;
+         }
+         .char-name {
+         font-size: 32px;
+         font-weight: bold;
+		    text-align:left;
+		    
+		    color:white;
+		    position:absolute;
+		    top:58px;
+		    right:-140px;
+		    width:100%;
+	     
+         }
+		 
+         .info-2{
+         position:absolute;
+         z-index:1000;
+         top:300px;
+         left:0px;
+         background-image:url(https://files.catbox.moe/spfzhv.png);
+	    background-size:contain;
+		    background-repeat:no-repeat;
+         height:140px;
+         word-wrap: break-word;
+         width:350px;
+		 transform: scaleX(-1);
+		    
+         }
+         .char-name-2{
+         font-size: 32px;
+         font-weight: bold;
+		    text-align:left;
+		    
+		    color:white;
+		    position:absolute;
+		    top:50px;
+		    right:150px;
+
+	     
+         }
+
+         .emblem{
+         position:absolute;
+         height:90vh;
+         display:flex;
+         flex-direction: column;
+         justify-content: center;
+		    bottom:0;
+         }
+         #emblem-bg{
+         height:90%;
+         }
+         #crown-img{
+         position:absolute;
+         bottom:160px;
+         left:295px;
+         width:200px;
+         border-radius:50%;
+         border:2px solid lightgrey;
+         outline:1px solid darkgrey;
+         padding:10px;
+         }
+         .spinning {
+         -webkit-animation: spin 40s linear infinite;
+         -moz-animation: spin 40s linear infinite;
+         animation: spin 40s linear infinite;
+         z-index: 1;
+         will-change: transform;
+         }
+         @-moz-keyframes spin {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(360deg); }
+         }
+         @-webkit-keyframes spin {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(360deg); }
+         }
+         @keyframes spin {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(360deg); }
+         }
+		 
+		 .footer{
+			 position:absolute;
+			 bottom:0;
+			 width:100%;
+			 background-image:url(https://files.catbox.moe/471foi.webp);
+			 background-size:cover;
+			 height:200px;
+			 filter:opacity(70%);
+			 pointer-events: none;
+			 z-index:-1;
+		 }
+      </style>
+   </head>
+   <body>
+	   <div class="header">
+		   <h1>Character Select</h1>
+    <h2><span>Time</span></h2>
+    <h2><span id="counter">0</span></h2>
+		 <!--Timer script-->
+		   <script>
+
+let seconds = 0;
+const display = document.getElementById('counter');
+
+function updateTimer() {
+    seconds++;
+    display.textContent = seconds;
+}
+
+setInterval(updateTimer, 1000);
+		   </script>
+	   </div>
+      <div class="characters">
+         <div class="emblem">
+            <img id="emblem-bg" src="https://files.catbox.moe/h712gg.webp">
+         </div>
+         <div class="player player-one ryu">
+		   <div class="info">
+               <h2 class="char-name"></h2>
+            </div> 
+         </div>
+         <div class="rooster">
+            <div class="flex">
+               <img class="spinning" id="crown-img" src="https://files.catbox.moe/m9hk3n.png">
+               <div class="row-1">
+                  <div onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()" class="character-wrapper">
+                     <div class="character-border">
+                        <div class="character kyu"
+                           data-player="kyu"
+                           data-name="Kyu"></div>
+                     </div>
+                  </div>
+                  <div onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()" class="character-wrapper">
+                     <div class="character-border">
+                        <div class="character tengu" data-player="tengu" data-name="Tengu"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row-2">
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character shiki" data-player="shiki" data-name="Shiki"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character yang" data-player="yang" data-name="Yang"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character dva" data-player="dva" data-name="D.Va"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row-1">
+                  <div onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()" class="character-wrapper">
+                     <div class="character-border">
+                        <div class="character jinx" data-player="jinx" data-name="Jinx"></div>
+                     </div>
+                  </div>
+                  <div onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()" class="character-wrapper">
+                     <div class="character-border">
+                        <div class="character quinn" data-player="quinn" data-name="Quinn"></div>
+                     </div>
+                  </div>
+                  <div onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()" class="character-wrapper">
+                     <div class="character-border">
+                        <div class="character kotone" data-player="kotone" data-name="Kotone"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row-3">
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character ada" data-player="ada" data-name="Ada"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character kaine" data-player="kaine" data-name="Kaine"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row-3">
+                  <div class="character-wrapper" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border">
+                        <div class="character lili" data-player="lili" data-name="Lili"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border">
+                        <div class="character melty" data-player="melty" data-name="Melty"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row-4">
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character panty" data-player="panty" data-name="Panty"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character kangel" data-player="kangel"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row-4">
+                  <div class="character-wrapper" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border">
+                        <div class="character rinoa" data-player="rinoa" data-name="Rinoa"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border">
+                        <div class="character marinette" data-player="marinette" data-name="Marinette"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row-2">
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character misa" data-player="misa" data-name="Misa"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character felicia" data-player="felicia" data-name="Felicia"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character kaori" data-player="kaori" data-name="Kaori"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row-5">
+                  <div class="character-wrapper" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border">
+                        <div class="character moka" data-player="moka" data-name="moka"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border">
+                        <div class="character tifa" data-player="tifa" data-name="Tifa"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border">
+                        <div class="character marin" data-player="marin" data-name="Marin"></div>
+                     </div>
+                  </div>
+               </div>
+               <div class="row-2">
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character asuna" data-player="asuna" data-name="Asuna"></div>
+                     </div>
+                  </div>
+                  <div class="character-wrapper-2" onclick="clicksound.playclip()" onmouseover="mouseoversound.playclip()">
+                     <div class="character-border-2">
+                        <div class="character zero" data-player="zero" data-name="Zero"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="player player-two Charlotte">
+		   <div class="info-2">
+               <h2 class="char-name-2">❤ Elia</h2>
+            </div> 
+         </div>
+      </div>
+	   <div class="footer"></div>
+	   <img src="https://files.catbox.moe/och1p8.png" style="position:absolute;bottom:60px;z-index:99999999;width:200px">
+	   <img src="https://files.catbox.moe/xb21qn.png" style="position:absolute;bottom:50px;right:0;z-index:99999999;width:205px">
+      <script>
+         // Mouseover/ Click sound effect- by JavaScript Kit (www.javascriptkit.com)
+         // Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+          
+         //** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+         //** Call: uniquevar.playclip() to play sound
+          
+         var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+         "mp3": "audio/mpeg",
+         "mp4": "audio/mp4",
+         "ogg": "audio/ogg",
+         "wav": "audio/wav"
+         }
+          
+         function createsoundbite(sound){
+         var html5audio=document.createElement('audio')
+         if (html5audio.canPlayType){ //check support for HTML5 audio
+         for (var i=0; i<arguments.length; i++){
+         var sourceel=document.createElement('source')
+         sourceel.setAttribute('src', arguments[i])
+         if (arguments[i].match(/\.(\w+)$/i))
+         sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+         html5audio.appendChild(sourceel)
+         }
+         html5audio.load()
+         html5audio.playclip=function(){
+         html5audio.pause()
+         html5audio.currentTime=0
+         html5audio.play()
+         }
+         return html5audio
+         }
+         else{
+         return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+         }
+         }
+          
+         //Initialize two sound clips with 1 fallback file each:
+          
+         var mouseoversound=createsoundbite("https://files.catbox.moe/vx9en1.mp3")
+         var clicksound=createsoundbite("https://files.catbox.moe/xe96j0.mp3")
+         
+         
+         var playPromise = video.play();
+         if (playPromise !== undefined) {
+           playPromise.then(_ => {
+             // Automatic playback started!
+           }).catch(error => {
+             // Auto-play was prevented or interrupted.
+           });
+         }
+          
+      </script>
+   </body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Gallery Page</title>
+      <link rel="icon" type="img/x-icon" href="http://decome.lolipop.jp/insyoku/kudamono/pic26.gif" />
+      <!--Basic Meta tags yipee----->
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <!------Style Tags-------------->
+      <style>
+		 
+         /*=========SCROLLBAR Starts here, this css does not work on firefox ;-; ========================*/	
+         ::-webkit-scrollbar {
+         background-color:transparent;
+         width:20px;
+         }
+         ::-webkit-scrollbar-track {
+         background: linear-gradient(
+         to right,
+         transparent calc(50% - 1px),
+         hotpink calc(50% - 1px),
+         hotpink calc(50% + 1px),
+         transparent calc(50% + 1px)
+         );
+         }
+         ::-webkit-scrollbar-track:horizontal {
+         background: linear-gradient(
+         to bottom,
+         transparent calc(50% - 1px),
+         hotpink calc(50% - 1px),
+         hotpink calc(50% + 1px),
+         transparent calc(50% + 1px)
+         );
+         }
+         ::-webkit-scrollbar-thumb {
+         background: #ffdbec;
+         background: linear-gradient(0deg, rgba(255, 219, 236, 1) 0%, rgba(255, 163, 205, 1) 39%, rgba(255, 122, 184, 1) 57%, rgba(255, 133, 188, 1) 72%, rgba(255, 217, 234, 1) 98%);
+         border:3px solid ;
+         border-image: linear-gradient( rgba(255, 245, 249, 1) 0%, rgba(204, 208, 222, 1) 57%, rgba(255, 255, 255, 1) 69%, rgba(245, 250, 255, 1) 96%) 1;
+         outline:1px solid black;
+         }
+         ::-webkit-scrollbar-button:horizontal:start:decrement,
+         ::-webkit-scrollbar-button:horizontal:end:increment,
+         ::-webkit-scrollbar-button:vertical:start:decrement,
+         ::-webkit-scrollbar-button:vertical:end:increment {
+         display: block;
+         }
+         ::-webkit-scrollbar-button:vertical:start {
+         height: 25px;
+         background-image: url("https://files.catbox.moe/d6ofxh.png");
+         background-size:contain;
+         background-repeat:no-repeat;
+         }
+         ::-webkit-scrollbar-button:vertical:end {
+         height: 25px;
+         background-image: url(https://files.catbox.moe/ew3ii9.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         }
+         ::-webkit-scrollbar-button:horizontal:start {
+         height:25px;
+         background-image: url(https://files.catbox.moe/ew3ii9.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         }
+         ::-webkit-scrollbar-button:horizontal:end {
+         height: 25px;
+         background-image: url(https://files.catbox.moe/ew3ii9.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         }
+         /*Resets all elements with default margins/padding*/
+         *, ::before, ::after {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+         }
+/*==============Body CSS=================*/
+         /*Pink gradient BG on body*/
+         body{
+         background: #fffafc;
+         background: linear-gradient(0deg, rgba(255, 250, 252, 1) 0%, rgba(255, 217, 234, 1) 39%);
+         background-attachment: fixed;
+         font-family: ms gothic /*Font family change here*/
+         /*The entire parent div of all the content*/
+         }
+/*==============Wrapper CSS=================*/
+         .wrapper{
+         margin:1rem auto;
+         border:1px solid hotpink; 
+         width:1000px; /*Change with here*/
+         position:relative;
+         }
+/*==============Header CSS=================*/
+         /*Text here - add new font and css here TWT */	
+         #header{
+         color:hotpink;
+         padding-left:50px;
+         font-size:40px;
+         margin-bottom:-20px;
+         }
+         /*Album icon*/
+         #album-header{
+         position:absolute;
+         top:10px;
+         }
+/*==============Back button CSS=================*/
+         /*back button start*/
+         .back-button-bg{
+         position:absolute;
+         bottom:10px;
+         right:0;
+         z-index:100;
+         background-image:url(https://files.catbox.moe/p1ef03.png);
+         background-repeat:no-repeat;
+         width:90px;
+         height:55px;
+         }
+         /*The text on the back button*/
+         .back-button-bg::before{
+         position:absolute;
+         content:'';
+         bottom:6px;
+         right:10px;
+         background-image:url(https://files.catbox.moe/adzsve.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         background-position:center;
+         height:20px;
+         width:40px;
+         filter: drop-shadow(4px 4px 8px #000000);
+         }
+         /*Red arrow on back button*/
+         #back-button{
+         position:absolute;
+         content:'';
+         bottom:20px;
+         right:5px;
+         background-image:url(https://files.catbox.moe/e2iyxe.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         background-position:center;
+         height:30px;
+         width:50px;
+         transition:0.1s; /*Transition on hover*/
+         } 
+         /*Makes the rew arrow glow on hover*/
+         #back-button:hover{
+         position:absolute;
+         content:'';
+         background-image:url(https://files.catbox.moe/s423ob.png);
+         background-size:33px;
+         background-repeat:no-repeat;
+         } 
+/*============== Container CSS  =================*/
+         /*The flower background of main container*/
+         main{
+         background-image:url(https://files.catbox.moe/dee39z.png);
+         background-size: 100% 100%;
+         width: 100%; /* Ensure the div has a defined size */
+         height: 660px; /* Ensure the div has a defined size */
+         }
+         .container{
+         width:100%;
+         flex:1;
+         padding-top:60px;
+         }
+         /*Container flexxxxxr*/
+         .container-flex{
+         display:flex;
+         flex-direction:row;
+         gap:10px;
+         }
+		 
+/*==============Gallery CSS=================*/
+         /*Start of gallery*/	
+         .gallery{
+         width:80%;
+         height:500px;
+         overflow:auto;
+         display:flex;
+         gap:10px;
+         flex-flow: row wrap;
+         align-content: flex-start;
+         justify-content: center;
+         padding:10px;
+         margin:20px;
+         z-index:2;
+         }
+         /*Parent div of images and the div that gives the rose gold border*/
+         .img-boarder{
+         border:1px solid hotpink;
+         width:220px;
+         height:140px;
+         background: #ffdede;
+         background: linear-gradient(0deg, rgba(255, 222, 222, 1) 0%, rgba(214, 161, 174, 1) 25%, rgba(217, 152, 169, 1) 40%, rgba(255, 201, 208, 1) 67%, rgba(255, 214, 214, 1) 80%, rgba(255, 240, 240, 1) 97%, rgba(255, 255, 255, 1) 100%);
+         border-radius:10px;
+         padding:4px;
+         -webkit-box-shadow: 2px 1px 1px 0px rgba(0,0,0,0.25); 
+         box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.25);
+         transition:0.3s;
+         will-change: transform;
+         z-index:20;
+         }
+         /*Makess images grow when hovered on*/
+         .img-boarder:hover{
+         transform: scale(110%);
+         }
+         /*The no-data image*/
+         .img-bg{
+         width:100%;
+         height:100%;
+         background-color:pink;
+         background-image:url(https://files.catbox.moe/jyjox1.png);
+         background-size:100% 100%;
+         background-position: center;
+         border:1px solid black;
+         border-radius:10px;
+         box-shadow: inset 0 0 20px white;
+         }
+         /*The CSS for your images*/	
+         .img-bg img{
+         height:100%;
+         width:auto;
+         margin:0 auto;
+         display:block;
+         border:3px solid white;
+         border-radius:10px;
+         }
+/*==============Charlotte Card=================*/
+         /*Charlotte card here*/	
+         .page-doll{
+         width:20%;
+         margin:20px 0px;
+         background-image:url(https://files.catbox.moe/cuuzm6.png);
+         background-size:cover;
+         z-index:1;
+         position:absolute;
+         height:610px;
+         width:290px;
+         top:0;
+         right:0;
+         }
+      </style>
+   </head>
+   <body>
+      <!-------Website start ❤------------>
+      <div class="wrapper">
+         <!-------Album header------------>
+         <img id="album-header" src="https://files.catbox.moe/y5uacs.png">
+         <!-------Main container------------>
+         <main>
+            <div class="container">
+               <!-------Header start------------>
+               <h1 id="header">Gallery Images</h1>
+               <!-------Container flex start------------>
+               <section class="container-flex">
+                  <!------Gallery div start------------->
+                  <div class="gallery">
+                     <!------Row 1------------->
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="https://files.catbox.moe/yoecl2.jpg">
+                        </div>
+                     </div>
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="https://files.catbox.moe/92390b.jpg">
+                        </div>
+                     </div>
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <!------Row 2------------->
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <!------Row 3------------->
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <!------Row 4------------->
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <div class="img-boarder">
+                        <div class="img-bg">
+                           <img src="">
+                        </div>
+                     </div>
+                     <!------Row 5------------->
+                  </div>
+                  <!-----Charlotte card---------->
+                  <div class="page-doll"></div>
+               </section>
+            </div>
+         </main>
+         <!-------Back button------------>
+         <div class="back-button-bg">
+            <a href="index.html" id="back-button"></a>
+         </div>
+      </div>
+      <!-------Charlotte page doll------------>
+      <img src="https://files.catbox.moe/lot1yn.webp" style="position:absolute;left:-70px; top:0;height:100vh;z-index:-1">
+	  <img src="https://files.catbox.moe/91tpf3.png" style="height:100%;bottom:0;right:0px;position:absolute;z-index:-1;  transform: scaleX(-1);">
+   </body>
+</html>

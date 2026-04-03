@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <!---⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣄⣠⣄⠀
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠙⢿⣿⠏⠀
+         ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠈⠀⠀⠀
+         ⠀⠀⠀⠀⣀⡤⣤⠶⠛⠉⠉⠀⠀⠉⠉⠛⠲⣤⣤⣄⠀⠀⠀⠀⠀
+         ⠀⠀⠀⡼⠃⠈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠈⢧⠀⠀⠀⠀
+         ⠀⠀⡼⢁⡆⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡄⠀⢰⡈⢧⠀⠀⠀
+         ⢀⡞⠁⣸⠁⠀⢠⠬⠓⠀⣀⠀⠀⢀⠀⠛⠥⣄⠀⠀⡇⠈⢳⡀⠀
+         ⡞⠀⠀⠹⣆⢰⣒⠆⠀⠀⠓⠊⠙⠚⠁⠀⠸⠭⠇⣰⠇⠀⠀⢻⠀
+         ⣇⠀⠀⠀⠈⣹⠶⠦⠤⠤⣤⣤⣤⡤⠤⠤⠴⠶⣏⠁⠀⠀⠀⣸⠁
+         ⠈⠓⠲⠖⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠲⠶⠚⠁
+         the wizard of maidenland aka shu was here nya
+         steal mine or elia's code or graphic and i will FIND U ⠀-->
+      <!----Mefle was here and visited the dearest webmaidens kingdom!! Hiiii!--->
+      <title>殻ノ少女</title>
+      <!----Meta tags ------>
+      <link rel="icon" type="image/x-icon" href="https://file.garden/aOCBrSuXPw8tOlnO/crown.png" />
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta property=“og:image” content=“https://file.garden/aOCBrSuXPw8tOlnO/Preview.jpeg” />
+      <!----SCRIPT ------>
+      <script>
+         // scrolling title text
+         let titleText = "殻ノ少女";
+         let speed = 200; // smaller = faster
+         function scrollTitle() {
+           document.title = titleText;
+           titleText = titleText.substring(1) + titleText.charAt(0);
+           setTimeout(scrollTitle, speed);
+         }
+         scrollTitle();
+      </script>
+      <script>
+         window.addEventListener('load', function () {
+           const audio = document.getElementById('myAudio');
+           audio.play().catch(function (error) {
+             console.log('Autoplay prevented:', error);
+           });
+         });
+      </script>
+      <!----AUDIO file ------>
+      <audio id="myAudio" src="https://file.garden/aOCBrSuXPw8tOlnO/Saya%20no%20Uta%20OST%20-%20Sabbath%20(1).mp3"
+         autoplay></audio>
+      <!------Website Style------>
+      <style>
+         /*=====CSS Reset + Scrollbar + Cursor=====*/
+         /*Removes any default CSS properties to HTML elements, allowing us to freely alter as we please*/
+         *, ::before, ::after {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+         cursor: url(https://cur.cursors-4u.net/cursors/cur-9/cur845.cur),
+         auto !important; /*Cursor here*/
+         -ms-overflow-style: none;  /* IE and Edge */
+         scrollbar-width: none;  /* Firefox */
+         }
+         /*==Chrome scrollbar removal=*/
+         ::-webkit-scrollbar {
+         display: none;
+         }     
+         /*Makes scrolling behavior behave... smoothly...*/
+         html {
+         scroll-behavior: smooth;
+         }
+         /*============Font families================*/
+         @font-face{
+         font-family: steel;
+         src:url(https://file.garden/aOCBrSuXPw8tOlnO/fonts/cks54z.ttf) format('truetype');
+         }
+         @font-face{
+         font-family: twinkle;
+         src:url(https://file.garden/aOCBrSuXPw8tOlnO/fonts/0u8u6s.TTF) format('truetype');
+         }
+         @font-face {
+         font-family:'Cursive';
+         src: url(https://file.garden/Ztqjvb3upRXqoA_3/Cursive.ttf);
+         }
+         @font-face {
+         font-family: 'basiic';
+         src: url("https://dl.dropbox.com/scl/fi/wd4ip5in43996hewlfcsy/basiic.ttf?rlkey=qcv7ps79k1t14kueko9cpdbfo&st=7od50azr&dl=0");
+         }
+         @font-face {
+         font-family: 'script';
+         src: url("https://dl.dropbox.com/scl/fi/ncr17693piksqwemt4ts5/PF-Pixelscript-Pro-Regular.ttf?rlkey=2de2wgfctpvhit579zhu77il8&st=azkeule8&dl=0");
+         }
+         @font-face {
+         font-family: cursive1;
+         src: url("https://dl.dropbox.com/scl/fi/p8mr4ttsdua8ifa0wkvm2/Cursive.ttf?rlkey=mwo27gvyq43tdmecdard8qxwj&st=n71ukr2z&dl=0");
+         }	 
+         @font-face {
+         font-family: 'littlespirit';
+         src: url("https://dl.dropbox.com/scl/fi/2b6f6bt9tf4ks82wgf689/LittleSpirit.ttf?rlkey=yjq2qq88zcrjn2cy1tii3cuzm&st=brgsv55m&dl=0");
+         }
+         @font-face {
+         font-family: blacknebula;
+         src: url("https://dl.dropbox.com/scl/fi/338auso0k3swkeyyeuu9g/BlackNebula.ttf?rlkey=fq028m4u2t74ngfvee6o1qeux&st=0j0ssi8x&dl=0")
+         }
+         @font-face {
+         font-family: 'levi';
+         src: url("https://dl.dropbox.com/scl/fi/85w5mr0f3afpynqmaud85/Windows-Regular.ttf?rlkey=agjl4g2k8kf8v9w9gjxxcvn6q&st=o5gfmk1b&dl=0")
+         }
+         /*======Text highlight CSS=================*/
+         ::selection {
+         text-shadow: 0 0 3px black;
+         color:white;
+         }
+         ::-moz-selection {
+         text-shadow: 0 0 3px black;
+         color:white;
+         }
+         /*======Link-text CSS=================*/
+         a:link,
+         a:visited {
+         color: inherit;
+         }
+         /*=================Body CSS=================*/
+         /*Body CSS*/
+         body {
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/Bgfix.png");  /*Page background*/
+         background-size: 20%;
+         }
+         .main-body
+         /*this is the parent div, everything goes under this div*/
+         {
+         width: 670px;
+         height:fit-content;
+         position: relative;
+         display:block;
+         z-index: 2;
+         margin: 80px auto;
+         }
+         /*Parent div of the main website, everything besides the tabs goes in here!*/
+         .wrapper{
+         /*Flex used in order to ensure that every child div stacks on top of one another*/ 
+         display:flex;
+         flex-direction:column;
+         /*The space in between each row */
+         gap:5px;  
+         /*Frill and background moves to this div*/
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/page%20bg");
+         background-size: 50%;
+         border-width: 15px;
+         border-style: solid;
+         border-image: url('https://file.garden/aOCBrSuXPw8tOlnO/weblace3.png') 12 fill round;
+         border-radius: 15px;
+         margin-bottom:20px;
+         }
+         /*===============Header CSS=================*/
+         /*Header container*/
+         .header {
+         width:100%;
+         height: 130px;
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/header2.jpeg");
+         background-size: 100%;
+         background-position: center;
+         position: relative;
+         padding: 5px;
+         }
+         /*Text of the header*/
+         /*Big ahh text*/
+         .header h2 {
+         font-size: 2.6em;
+         font-family: 'Cursive';
+         font-weight:bold;
+         position: relative;
+         color: #858484;
+         top: 50px;
+         text-shadow: 0 1px white, 1px 0px white, 0 -1px white, -1px 0px white, 1px -1px white, -1px 1px white, 1px 1px white, -1px -1px white;
+         width:fit-content;
+         }
+         /*Small ahh text*/		 
+         .header h3 {
+         font-family: 'Cursive';
+         font-size: 2.3em;
+         font-weight:bold;
+         position: relative;
+         top: 33px;
+         left: 200px;
+         text-shadow: 2px 2px 4px white;
+         image-rendering: pixelated;
+         text-shadow: 0 1px white, 1px 0px white, 0 -1px white, -1px 0px white, 1px -1px white, -1px 1px white, 1px 1px white, -1px -1px white;
+         width:fit-content;
+         }
+         /*Chunky crown pixel on top of small header text*/
+         .header h3::after{
+         content:'';
+         position:absolute;
+         top:-30px;
+         right:-30px;
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/crown.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         height:40px;
+         width:40px;
+         transform: rotate(10deg);
+         filter: drop-shadow(0px 0px 3px white);
+         }
+         /*Header image*/	 
+         .hover-image {
+         width: 510px;
+         margin: auto;
+         position: absolute;
+         z-index:6;
+         top: -100px;
+         right: -100px;
+         }
+         /*======All the rows CSS here, you can change heights/ looks of them here====*/	
+         /*Top row (holds nav + introduction + page links*/
+         .first-row {
+         width: 100%;
+         height: 235px;
+         position: relative;
+         display:flex;
+         z-index:10;
+         }
+         /*Top Row Left side - Holds the navigation*/		 
+         .first-row-left{
+         display:flex;
+         flex-direction:column;
+         }
+         /*Top Row Right side side - Holds the intro + extra + hearfrill*/
+         .first-row-right{
+         display:flex;
+         flex-direction: column;
+         }
+         /*Second row (holds Charlotte + Calender + Stats*/
+         .second-row{
+         width:100%;
+         height:210px;
+         border-width: 13px;
+         border-style: solid;
+         border-image: url("https://file.garden/ZZ2PUl9MPilKgIvB/collection/borders/xnxzti-1.png") 8 fill round;
+         display:flex;
+         flex-direction:row;
+         gap:5px;
+         padding:5px;
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/essenceyes.jpeg);
+         background-size:11%;
+         position:relative;
+         }
+         /*Third row (Holds stamp marquees )*/
+         .third-row {
+         width:100%;
+         height: fit-content;
+         border: solid thin;
+         margin: auto;
+         padding:2px;
+         position: relative;
+         border-width: 8px;
+         border-style: solid;
+         border-image: url('https://files.catbox.moe/t5ql9a.png') 10 fill round; /*grey frill*/
+         border-radius: 8px;
+         z-index: 6;
+         }
+         /*Forth row (Holds adore list + button + update-log + chatbox)*/
+         .forth-row {
+         width:100%;
+         height: 280px;
+         margin: auto;
+         position: relative;
+         z-index: 6;
+         display:flex;
+         gap:5px;
+         border:1px solid;
+         padding:5px;
+         background-color:white;
+         border-width: 12px;
+         border-style: solid;
+         border-image: url('https://file.garden/aOCBrSuXPw8tOlnO/weblace5.png') 200 fill round;
+         }
+         /*=================== Navigation start ===================*/
+         /*Navigation header*/
+         .navi-button {
+         width: 100%;
+         height: 36px;
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/bnuyy");
+         background-size: contain;
+         background-repeat:no-repeat;
+         background-position: center;
+         font-family: 'script';
+         text-align: center;
+         line-height: 3.7em;
+         z-index: 5;
+         font-size: 11px;
+         }
+         /*Navigation Header text*/
+         .navi-button span{
+         position: absolute;
+         left:40px;
+         top:-2px;
+         font-size:9px;
+         }
+         /*Parent div that holds all of the navigation elements */
+         .navigation {
+         margin: auto;
+         position: relative;
+         z-index: 5;
+         width:130px;
+         }
+         /*Heart pendant on the right side of navigation*/
+         .first-row::before{
+         content:'';
+         position:absolute;
+         top:35px;
+         left:105px;
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/hangheartthing.gif);
+         background-size:contain;
+         background-repeat:no-repeat;
+         width:45px;
+         height:150px;
+         z-index:100;
+         pointer-events:none;
+         }
+         /*div that holds nav buttons here*/
+         nav{
+         flex:1;
+         display:flex;
+         overflow:auto;
+         height:100%;
+         flex:1;
+         }
+         /*the parent div of navigation buttons, flex + column makes sure they stack together*/	   
+         nav ul{
+         display:flex;
+         width:100%;
+         flex-direction:column;
+         list-style: none;
+         }
+         /*The button CSS - edit here to change bg color of buttons and padding*/	   	   
+         nav li{
+         background: linear-gradient(#ffffff 40%, #c8a4ae28 80%);
+         border: solid thin #292727;
+         position: relative;
+         color: #524949;
+         width: 100%;
+         padding: 2px 10px;
+         border-bottom: hidden;
+         height: fit-content;
+         }
+         /*The links inside the nav buttons*/
+         nav li a{
+         display: block;
+         text-align: left;
+         width:100%;
+         font-size: 16px;
+         text-align: left;
+         font-family: 'levi';
+         }
+         /*Adds crown pixel before the link of any nav li button!*/
+         nav li a::before{
+         content:url(https://file.garden/aOCBrSuXPw8tOlnO/graycrown_pixel);
+         margin-right:5px;
+         }
+         /*Makes the very first button on the nav have round edges*/
+         nav li:nth-child(1){
+         border-radius: 15px 15px 0px 0px;
+         }
+         /*Gives the very first button on the nav a different crown pixel*/
+         nav li:nth-child(1) a::before{
+         content:url(https://file.garden/aOCBrSuXPw8tOlnO/Crownheart.gif);
+         margin-right:5px;
+         }
+         /*Heart lace pixel gif*/		 
+         .lace {
+         width:100%;
+         height: 78px;
+         margin: auto;
+         z-index: 5;
+         position: relative;
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/55.gif");
+		    background-repeat:repeat-x;
+         pointer-events: none;
+         }
+         /*=================== Intro start ===================*/
+         /*Intro parent div holder*/
+         .intro {
+         width: 100%;
+         height: 100%;
+         margin: auto;
+         position: relative;
+         padding: 5px;
+         background: #ffffff;
+         font-family: 'basiic';
+         z-index: 2;
+         color: #414141;
+         font-size: 13px;
+         background-size: 50%;
+         }
+         /*Actual paragraph div with the white frill*/
+         .intro-inner{
+         padding:10px 15px;
+         height:100%;
+         overflow: auto;
+         border-width:8px;
+         border-style: solid;
+         border-image: url('https://file.garden/aOCBrSuXPw8tOlnO/heartlace') 7 fill round;	   
+         }
+         .pixel {
+         width: 14px;
+         }
+         /*Intro right frill*/
+         .intro::before {
+         content:'';
+         width: 22px;
+         height: 189px;
+         background: url("https://foollovers.com/mat/frill02/c01-bg-frill.gif");
+         position: absolute;
+         top: 5;
+         right: 0px;
+         background-position: right;
+         pointer-events: none;
+         }
+         /*Intro left frill*/
+         .intro::after{
+         content:'';
+         width: 22px;
+         height: 189px;
+         background: url("https://foollovers.com/mat/frill02/cr01-bg-frill.gif");
+         position: absolute;
+         top: 5px;
+         left: 0;
+         background-position: left;
+         pointer-events: none;
+         }
+         /*Intro name holder*/
+         .intro-header {
+         width: 130px;
+         height: 36px;
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/bnuyy");
+         background-size: 105%;
+         background-position: center;
+         font-family: 'script';
+         text-align: center;
+         z-index: 5;
+         display: flex;
+         font-size: 8.5px;
+         line-height: 1.8em;
+         }
+         /*Intro header text span*/	 
+         .intro-header span{
+         font-family: 'script';
+         font-size:8px;
+         text-align: center;
+         position: relative;
+         bottom: -12px;
+         right: -10px;
+         }
+         /*Intro lil pixel bow on the right side*/ 
+         .bow {
+         width: e0px;
+         position: relative;
+         left: 80px;
+         bottom: 7px;
+         ;
+         }
+         /*Parent div of intro and extra links*/
+         .inner-flex{
+         flex-direction:row;
+         display:flex;
+         height:85%;
+         z-index:2;
+         position:relative;
+         gap:10px;
+         padding-left:10px;
+         }
+         /*==================Extra links start==========================*/
+         .extra {
+         height: 100%;
+         width:200px;
+         padding:2px;
+         background: white;
+         overflow: auto;
+         font-family: 'basiic';
+         z-index: 2;
+         border-width: 8px;
+         border-style: solid;
+         border-image: url('https://file.garden/aOCBrSuXPw8tOlnO/heartlace') 7 fill round;
+         border-radius: 8px;
+         text-align: justify;
+         color: #414141;
+         font-size: 14px;
+         position:relative;
+         }
+         /*Flex div that holds buttons*/
+         .extra-links{
+         display:flex;
+         flex-direction:column;
+         gap:5px;
+         border:2px lightgrey dashed;
+         height:100%;
+         padding:3px;
+         }
+         /*Extra buttons appearance CSS*/
+         .extra-links a{
+         border-width: 10px;
+         border-style: solid;
+         border-image: url("https://file.garden/aOCBrSuXPw8tOlnO/lacething.png") 13 fill round;
+         position:relative;
+         background: #ffffff;
+         background: linear-gradient(0deg, rgba(255, 255, 255, 1) 0%, rgba(233, 227, 227, 1) 100%);
+         display:block;
+         text-align:center;
+         }
+         /*=============Second Row CSS start===========================*/
+         /*===== Status start ==============*/
+         /*Status parent div*/
+         .status-flex{
+         display:flex;
+         flex-direction:row;
+         gap:10px;
+         border:3px dotted white;
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/cushion.jpeg);
+         background-size:100% 100%;
+         padding: 0 5px;
+         }
+         /*Charlotte parent div*/
+         .charlotte-holder{
+         z-index:10;
+         width:120px;
+         }
+         /*Charlotte img CSS */
+         .charlotte-face{
+         width:100%;
+         height:auto;
+         filter:grayscale(50%);
+         position:relative;
+         z-index:1;
+         width:210px;
+         transform: translate(-37px, 10px)
+         }
+         /*======= Calender start ========*/
+         /*Calender is on an iframe, refer to calender.html to alter calender colors!*/
+         .calender{
+         width:180px;
+         margin:0;
+         padding:0;
+         background-color:transparent;
+         }
+         iframe{
+         border:0;
+         }
+         /*======= Web-stats start ========*/
+         .web-stats{
+         border-width: 10px;
+         border-style: solid;
+         border-image: url('https://file.garden/aOCBrSuXPw8tOlnO/weblace5.png') 220 fill round;
+         background-color:white;
+         padding:5px;
+         font-family: 'basiic';
+         font-size:13px;
+         display:flex;
+         flex-direction:column;
+         gap:3px;
+         width:100%;
+         }
+         /*Web-stats header*/
+         .web-stats h3{
+         font-family:basiic;
+         font-size:16px;
+         text-decoration-line: underline;
+         }
+         /*Web-stats Follow button*/	 
+         .web-stats a{
+background: #faf7f7;
+background: linear-gradient(0deg, rgba(250, 247, 247, 1) 0%, rgba(237, 232, 232, 1) 100%);
+         box-shadow: 2px 3px 3px inset #ffffff, -1px -1px 1px inset grey;
+         text-align:center;
+         border:1px solid grey;
+         border-radius:5px;
+         padding:2px;
+         }
+         extrameow {
+         font-family: 'MS Gothic';
+         }
+         /*======================Third row : Marquees start ================================*/
+         /*Stamp img*/
+         .stamp {
+         width: 100px;
+         height:auto;
+         margin: auto 0;
+         }
+         /* The infinite marquees by Ryan Mulligan, made following this tutorial: https://ryanmulligan.dev/blog/css-marquee/ */
+         .marquee {
+         --gap: 4px;
+         padding:5px 0;
+         border:3px dotted darkgray;
+         background: #ededed;
+         background: linear-gradient(0deg, rgba(237, 237, 237, 1) 0%, rgba(255, 255, 255, 1) 21%);
+         display: flex;
+         overflow: hidden;
+         user-select: none;
+         gap: var(--gap);
+         }
+         .marquee__content {
+         flex-shrink: 0;
+         display: flex;
+         justify-content: space-around;
+         min-width: 100%;
+         gap: var(--gap);
+         list-style: none;
+         animation: scroll 20s linear infinite;
+         }
+         @keyframes scroll {
+         from {
+         transform: translateX(0);
+         }
+         to {
+         transform: translateX(calc(-100% - var(--gap)));
+         }
+         }
+         /* Pause on hover */
+         .marquee:hover .marquee__content {
+         animation-play-state: paused;
+         }
+         /*Mari Chibi*/	 
+         .marquee::before{
+         content:'';
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/cheebs.gif);
+         background-size:contain;
+         background-repeat:no-repeat;
+         top:-67px;
+         left:-95px;
+         height:180px;
+         width:130px;
+         position:absolute;
+         z-index:100000;
+         }
+         /*======================Forth-Row: Adore list + Button + update logs + Chatbox Start ===============================================*/
+         /*=========Chatbox start========*/
+         /*Chatbox has its own unqiue fileset and functions as a iframe, refer to chatbox folder for its contents!*/
+         .chatbox-holder {
+         width:100%;
+         height:100%;
+         border: double;
+         bottom: 1px;
+         z-index: 99;
+         position:relative;
+         }
+         /*Tiara frill top on chatbox*/
+         .chatbox-holder::before{
+         content:'';
+         position:absolute;
+         z-index:2;
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/touch.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         width:220px;
+         height:170px;
+         top:-100px;
+         left:-2px;
+         pointer-events: none;
+         }
+         /*Frill bottom on chatbox*/
+         .chatbox-holder::after{
+         content:'';
+         position:absolute;
+         z-index:2;
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/princessbottom.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         width:220px;
+         height:110px;
+         bottom:-70px;
+         left:0;
+         pointer-events: none;
+         }
+         /*=====I adore list begins here========*/
+         /*Parent div for left side of forth-row*/
+         .graphic-con {
+         height: 100%;
+         width: 630px;
+         position: relative;
+         z-index: 2;
+         border:7px solid black;
+         border-image:url(https://treflemefle.nekoweb.org/IMG/Borders/White-frill-border.gif)7 fill round;
+         display:flex;
+         flex-direction:column;
+         padding:4px;
+         }
+         /*Flex holder*/
+         .bottom-row-middle{
+         display:flex;
+         flex-direction:column;
+         flex:1;
+         position:relative;
+         height:100%;
+         }
+         /*Lil game gif on top of list */
+         .gamegif {
+         width: 100%;
+         height: 80px;
+         margin: auto;
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/Gamegif.gif");
+         background-size: 100%;
+         }
+         .div {
+         position: relative;
+         top: -10px;
+         height: 10%;
+         z-index: 4;
+         }
+         /*Adore list parent div*/
+         .textbox {
+         width: 100%;
+         height:70%;
+         position: relative;
+         padding: 5px;
+         background: white;
+         overflow: auto;
+         font-family: 'basiic';
+         border-width: 8px;
+         border-style: solid;
+         border-image: url('https://file.garden/aOCBrSuXPw8tOlnO/heartlace') 7 fill round;
+         z-index: 3;
+         border-radius: 8px;
+         color: #524949;
+         font-size: 13px;
+         }
+         /*Miku gif*/
+         .mikugif {
+         width: 120px;
+         margin: auto;
+         height: 120px;
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/Dancingmiku.gif");
+         background-size: 100%;
+         z-index: 3;
+         position: relative;
+         top: -170px;
+         right: -115px;
+         pointer-events: none;
+         }
+         /*Her.nekoweb.org button*/
+         .button {
+         width: 140px;
+         height: 50px;
+         margin: auto;
+         position: relative;
+         }
+         .blinkie {
+         width: 100%;
+         }
+         /*Figurine next to chatbox*/
+         .figure {
+         width: 220px;
+         position: absolute;
+         z-index: 1000;
+         right: -195px;
+         bottom: -60px;
+         pointer-events: none;
+         z-index: 6;
+         }
+         /*=====Update start===========*/
+         /*Update holder*/
+         .update {
+         height:70%;
+         padding: 5px;
+         border-width: 8px;
+         border-style: solid;
+         border-image: url('https://file.garden/aOCBrSuXPw8tOlnO/lacething.png') 11 fill round;
+         position: relative;
+         background: #ffffff;
+         font-family: 'levi';
+         font-size: 15px;
+         color: #524949;
+         z-index: 99;
+         position:relative;
+         flex:1;
+         }
+         /*Update log*/
+         .update-log{
+         height:80%;
+         overflow:auto;
+         position:relative;
+         }
+         /*Update header div holder*/
+         .update-header{
+         letter-spacing:2px;
+         flex:1;
+         height:40px;
+         text-align:left;
+         }
+         /*Update header text*/
+         .update-header b{
+         font-family:'basiic';
+         color:black;
+         font-size:14px;
+         }
+         /*Update cross gif*/
+         .button::before{
+         position:absolute;
+         content:'';
+         background-image:url(https://file.garden/aOCBrSuXPw8tOlnO/hangingstuddedcross.gif);
+         background-size:contain;
+         background-repeat:no-repeat;
+         width:90px;
+         height:150px;
+         top:0;
+         right:-50px;
+         z-index:110;
+         }
+         * {
+         color: #524949;
+         }
+         .the-thing-behind-figure
+         /*the chandelier heart thing */
+         {
+         width: 45px;
+         position: absolute;
+         z-index: 4;
+         left: 130px;
+         top: 204px;
+         pointer-events: none;
+         z-index: 5;
+         }
+         scriptfortextbox {
+         font-family: 'script';
+         font-size: 8px;
+         }
+         /*start of #character*/
+         .charac-con {
+         width: 100%;
+         height: 470px;
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/essenceyes.jpeg");
+         background-size: 11%;
+         border-width: 20px;
+         border-style: solid;
+         border-image: url("https://file.garden/ZZ2PUl9MPilKgIvB/collection/borders/xnxzti-1.png") 8 fill round;
+         animation-name: fade-in;
+         animation-duration: 1s;
+         animation-fill-mode: forwards;
+         user-select: none;
+         }
+         @keyframes fade-in {
+         0% {
+         opacity: 0;
+         transform: translateY(-5px);
+         }
+         100% {
+         opacity: 1;
+         transform: translateY(0); 
+         }
+         }
+         .spinning {
+         -webkit-animation: spin 10s linear infinite;
+         -moz-animation: spin 10s linear infinite;
+         animation: spin 10s linear infinite;
+         z-index: -1;
+         will-change: transform;
+         filter:grayscale(100%);
+         }
+         @-moz-keyframes spin {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(360deg); }
+         }
+         @-webkit-keyframes spin {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(360deg); }
+         }
+         @keyframes spin {
+         from { transform: rotate(0deg); }
+         to { transform: rotate(360deg); }
+         }
+         .charac-con:target {
+         display: block;
+         }
+         .charac-con:not(:target) {
+         display: none;
+         }
+         .side-con {
+         width: 150px;
+         height: 450px;
+         position: relative;
+         margin: auto;
+         right: -250px;
+         }
+         .character-con {
+         width: 430px;
+         height: 440px;
+         position: relative;
+         margin: auto;
+         top: -450px;
+         left: -90px;
+         padding: 10px;
+         font-family: 'basiic';
+         color: white;
+         text-shadow: -1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF;
+         }
+         .charac-stuff img {
+         width: 55px;
+         transition: transform 0.3s ease;
+         border-radius:5px;
+         border:3px double grey;
+         }
+         .charac-stuff {
+         position: relative;
+         transform-origin: center;
+         display: inline-block;
+         flex-direction: column;
+         align-items: center;
+         margin: 3px;
+         }
+         .charac-stuff .tooltip {
+         background: black;
+         color:black!important;	 
+         font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+         visibility: hidden;
+         color: #fff;
+         text-align: center;
+         border-radius: 6px;
+         padding: 3px 0;
+         position: absolute;
+         z-index: 1;
+         bottom: 100%;
+         width: 60px;
+         margin: auto;
+         font-size: 12px;
+         transition: transform 0.3s ease-out, opacity 0.3s ease-out, visibility 0.3s ease-out;
+         transform: translateY(-10px);
+         }
+         .charac-stuff:hover .tooltip {
+         visibility: visible;
+         transition: 0.1s ease;
+         }
+         .charac-stuff:hover {
+         transition: transform 0.3s ease;
+         }
+         .charac-stuff img:hover {
+         transform: scale(1.2);
+         transform-origin: center;
+         filter: grayscale(0%) brightness(100%) contrast(100%);
+         }
+         .speech-bubble {
+         position: relative;
+         background: #fafafa;
+         background: linear-gradient(0deg, rgba(250, 250, 250, 1) 0%, rgba(255, 242, 247, 1) 21%);
+         color: grey;	    
+         text-align: center;
+         border-radius: 10px;
+         padding: 0px;
+         width:130px;
+         word-wrap: break-word;
+         font-family:basiic;
+         z-index:100;
+         height:fit-content;
+         margin-top:30px;
+         padding:5px;
+         filter: drop-shadow( 0 3px #e0d5db) drop-shadow( 2px 0 #e0d5db) drop-shadow( 0 -1px #e0d5db) drop-shadow( -1px 0 #e0d5db) drop-shadow(1px 1px 0 #e0d5db) drop-shadow(1px 1px 0 #e0d5db) drop-shadow( 0 0 2px #e0d5db);
+         }
+         .speech-bubble:before{
+         position:absolute;
+         top:-12px;
+         left:0px;
+         content:'【 Elia 】';
+         color:grey;
+         background-color:#fff2f7;
+         border-radius:5px 5px 0 0;
+         padding:0px 10px;
+         }
+         .speech-bubble:after {
+         content: '';
+         position: absolute;
+         display: block;
+         width: 0;
+         z-index: 120;
+         border-style: solid;
+         border-width: 0 20px 20px 0;
+         border-color: transparent #fff2f7 transparent transparent;
+         top: 71%;
+         left: -20px;
+         margin-top: -10px;
+         }
+         #statuscafe {
+         padding: 0.5em;
+         font-size:12px;
+         }
+         #statuscafe-username {
+         margin-bottom: 0.1em;
+         color:grey;
+         }
+         #statuscafe-username a{
+         display:none;
+         }
+         #statuscafe-content {
+         margin: 0 1em 0.5em 1em;
+         color:grey;
+         height:fit-content;
+         max-height:60px;
+         overflow:auto;
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+         .scrollable-div::-webkit-scrollbar {
+         display: none;
+         }
+         }
+         /*end of #character*/
+         .extra-con {
+         width: 100%;
+         height: 420px;
+         margin: auto;
+         background: url("https://file.garden/aOCBrSuXPw8tOlnO/essenceyes.jpeg");
+         background-size: 15%;
+         font-family: 'cursive1';
+         font-size: 25px;
+         color: white;
+         border-width: 20px;
+         border-style: solid;
+         border-image: url("https://file.garden/ZZ2PUl9MPilKgIvB/collection/borders/xnxzti-1.png") 8 fill round;
+         animation-name: fade-in;
+         animation-duration: 1s;
+         position: relative;
+         padding: 20px;
+         animation-name: fade-in;
+         animation-fill-mode: forwards;
+         z-index: 3;
+         text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+         }
+         @keyframes fade-in {
+         0% {
+         opacity: 0;
+         }
+         100% {
+         opacity: 1;
+         transform: translateY(5px);
+         }
+         }
+         .extra-con:target {
+         display: block;
+         }
+         .extra-con:not(:target) {
+         display: none;
+         }
+         .extra-info-flex{
+         display:flex;
+         }
+         .extra-info-flex-left{
+         }
+         .extra-flex{
+         display:flex;
+         width:100%;
+         gap:5px;
+         }
+         .extra-flex-right{
+         width:70%;
+         }
+         .extra-flex-left{
+         width:30%;
+         }
+         .extra-info {
+         height: 280px;
+         padding: 10px;
+         text-align: center;
+         font-family: 'basiic';
+         font-size: 15px;
+         background: white;
+         border-width: 8px;
+         border-style: solid;
+         border-image: url('https://file.garden/aOCBrSuXPw8tOlnO/heartlace') 7 fill round;
+         z-index: 3;
+         border-radius: 8px;
+         text-shadow: none;
+         }
+         .extra-info-flex{
+         display:flex;
+         height:100%;
+         }
+         .extra-info-left{
+         width:30%;
+         }
+         .extra-info-right{
+         width:70%;
+         position:relative;
+         z-index:92;
+         }
+         .extra-graphic {
+         width: 100%;
+         height: 100%;
+         padding: 10px;
+         text-align: center;
+         font-family: 'basiic';
+         font-size: 15px;
+         margin: auto;
+         position: relative;
+         background: white;
+         border-width: 8px;
+         border-style: solid;
+         border-image: url('https://file.garden/aOCBrSuXPw8tOlnO/heartlace') 7 fill round;
+         z-index: -1;
+         border-radius: 8px;
+         text-shadow: none;
+         }
+         chaf {
+         font-size: 25px;
+         }
+         .pragraph {
+         width: 300px;
+         height: 170px;
+         margin: auto;
+         z-index: 10;
+         position: absolute;
+         top: 145px;
+         right: 18px;
+         overflow: auto;
+         align-content: center;
+         }
+         .pragraph img {
+         width: 80%;
+         margin: auto;
+         margin-bottom:15px;
+         border: 5px solid #ebdde3;
+         background: #ebdde3;
+         border-radius: 10px;
+         box-shadow: 0px 0px 5px #ebdde3, 0px 0px 5px #ebdde3, 0px 0px 5px #ebdde3, 0px 0px 5px #ebdde3, 0px 0px 14px #ebdde3;
+         display: block;
+         }
+         textarea {
+         padding: 1px;
+         font-size: 12px;
+         resize: both;
+         overflow-y: auto;
+         box-sizing: border-box;
+         line-height: 1.5em;
+         position: relative;
+         width:100%;
+         }
+		 
+      </style>
+   </head>
+   <!------Start of the webmaiden lands ❤------->
+   <body>
+      <div id="home" class="main-body">
+         <!------Main content wrapper Start------------>
+         <div class="wrapper">
+            <!------Header row Start------------------>
+            <div class="header">
+               <!-----Big text---->
+               <h2> @ the website . </h2>
+               <!-----Small text---->
+               <h3> maiden </h3>
+               <!-----Header img ---->
+               <img class="hover-image" src="https://file.garden/aOCBrSuXPw8tOlnO/nyoangelban.png" />
+               <!-----Word spinning img ---->
+               <img class="spinning" src="https://chezimu.neocities.org/Images/happiness_circle.png" style="position:absolute;z-index:3;top:-80px;left:350px;height:280px;">
+            </div>
+            <!------Row 1 Start------------------>
+            <div class="first-row">
+               <!--------Left side of first row (Navigation) -------------->
+               <div class="first-row-left">
+                  <!----Navigation start------->
+                  <div class="navigation">
+                     <!----Nav header------->
+                     <div class="navi-button">
+                        <span>navi</span>			   
+                        <img class="pixel" style="position: absolute;top:10px;right:30px;"
+                           src="https://file.garden/aOCBrSuXPw8tOlnO/Cross.png" />
+                     </div>
+                     <!----Nav buttons start------->
+                     <nav>
+                        <ul>
+                           <li><a
+                              href="/Diary-demo/diary-demo.html">my diary</a></li>
+                           <li><a
+                              href="https://x.com/neetmaid?s=21">twitter</a></li>
+                           <li> <a href="https://steamcommunity.com/id/zarceline/">steam</a></li>
+                           <li>
+                              <a href="https://open.spotify.com/user/zy3zhrt4s9pdqenvoopnki2pf?si=90888c44a2d94ddc&nd=1&dlsi=8ac0b4a52e6845b7">spotify</a>					
+                           </li>
+                           <li>
+                              <a
+                                 href="https://www.pinterest.com/Zarceline/?invite_code=33776117c2c8450db9c78dc2790b9d48&sender=824088569223172194">pinterest</a>	
+                           </li>
+                           <li>
+                              <a href="https://www.tiktok.com/@dvaette">tiktok</a>
+                           </li>
+                           <li>
+                              <a href="https://www.instagram.com/zarceline/">instagram</a>				
+                           </li>
+                        </ul>
+                     </nav>
+                  </div>
+               </div>
+               <!--------Right side of first row (Lace + Intro + Page buttons) -------------->
+               <div class="first-row-right">
+                  <!------Hear lace------->
+                  <div class="lace"></div>
+                  <!------ Intro + Buttons ----->
+                  <div class="inner-flex">
+                     <!----Intro start--------->
+                     <div class="intro">
+                        <div class="intro-inner">
+                           <img src="https://file.garden/aOCBrSuXPw8tOlnO/mainicongals.gif"
+                              style="width:100px;float:left;padding-right: 2px;border-radius:5px;box-shadow: 0 0 20px 20px white inset;" />
+                           <div class="intro-header">
+                              <span> zarceline</span>
+                              <img class="bow" src="https://file.garden/aOCBrSuXPw8tOlnO/Needbow.gif" />
+                           </div>
+                           welcome I am .. the webmaiden
+                           𝄞 ꉂ(๑ᵔ⤙ᵔ๑) ♡ #fujoshiprincess
+                           <img src="https://file.garden/aOCBrSuXPw8tOlnO/Marinsit.png" style="width:130px;float:right;" />
+                           <br />
+                           ᛝ( ⁎ᵕᴗᵕ⁎ )ᛝ this website was formatted 2 b mobile + desktop friendly!!
+                           <br />
+                           I love j-fashion and video games and cosplay an AWFUL lot ♪♪♪
+                           (b ᵔ▽ᵔ)b I play everything Up to FPS - story ridden games, hack n slash,
+                           and denpa VN’s ! ! I am VERY sarcastic and very playful and passionate about EVEERYTHING.
+                           I am openly vulgar in respectful ways and love to update the website domain with my gracing dude…
+                           talk to me I HIGHLY encourage it. ESPECIALLY if you like what I like ok??? mmmwah ♡ 
+                           fair warning i am very vulgar and make a lot of nsfw jokes! am a busy gal who forgets, or can't 
+                           reply tew fast lol. . . normally active via insta + discord (both handles @ zarceline ♡ )
+                           you can talk in
+                           my cbox below!!! check MY UPDATE LOG FOR DIARY UPDATES!!!
+                           click "my faves" to see the essence of webmaidens soul, anndd click on my info for my name n stuff dude.
+                           anything else underlined you can also press or click! have fun my little angels. . . grace thee from webmaiden
+                        </div>
+                     </div>
+                     <!------- Extra pages buttons ----->
+                     <div class="extra">
+                        <div class="extra-links">
+                           <a href="character.html" onclick="clicksound.playclip()">my faves 𝄞</a>
+                           <a href="my-info.html" onclick="clicksound.playclip()">my info ♡</a>
+                           <a href="#extra" onclick="clicksound.playclip()">links</a>
+                         <a href="gallery.html" onclick="clicksound.playclip()">Gallery</a>
+	                       <a href="gallery.html" onclick="clicksound.playclip()">Shrines</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!------Row 2 Start------------------>
+            <div class="second-row">
+               <!-------Status start ------------>
+               <div class="status-flex">
+                  <!-------Parent div for charlotte ------------>
+                  <div class="charlotte-holder">
+                     <!-------Charlotte face pngs------------>	
+                     <img id="charlotte" class="charlotte-face" src="https://files.catbox.moe/g3nebf.png" draggable="false">
+                     <!--------Charlotte face changing script------------------->
+                     <script>
+                        var image = document.getElementById("charlotte");
+                        
+                        // First image of choice
+                        image.onmouseover = function() {
+                          this.src = "https://file.garden/aOCBrSuXPw8tOlnO/Charlotte-sprites/Faces/%E3%82%B7%E3%83%A3%E3%83%AB%E3%83%AD%E3%83%83%E3%83%88_w_a1_%E7%A7%81%E6%9C%8D_t_a03.png";
+                        };
+                        
+                        // Second image of choice
+                        image.onmouseout = function() {
+                          this.src = "https://file.garden/aOCBrSuXPw8tOlnO/Charlotte-sprites/Faces/%E3%82%B7%E3%83%A3%E3%83%AB%E3%83%AD%E3%83%83%E3%83%88_w_a1_%E7%A7%81%E6%9C%8D_h_g02.png";
+                        };
+                     </script>
+                  </div>
+                  <!-------Status speech bubble start ------------->
+                  <div class="speech-bubble">
+                     <div id="statuscafe">
+                        <div id="statuscafe-username"></div>
+                        <div id="statuscafe-content"></div>
+                     </div>
+                     <script src="https://status.cafe/current-status.js?name=zarceline" defer></script>
+                  </div>
+               </div>
+               <!-------Calender start ------------->
+               <iframe src="calender.html" class="calender">
+               </iframe>
+               <!-------Web stats start ------------->
+               <div class="web-stats">
+                  <h3>Stats:</h3>
+                  <span id="created"></span>
+                  <span id="updated"></span>
+                  <span id="visitors"></span>
+                  <span id="followers"></span>
+                  <a href="https://nekoweb.org/follow/her.nekoweb.org" target="_blank" class="follow">Follow on Nekoweb!</a>
+               </div>
+               <!-----Web stats script by maxpixels.moe ------->
+               <script>
+                  let domain = "her.nekoweb.org"; // <<<--- Insert your domain here!
+                  
+                  (async () => {
+                   try {
+                     const request = await fetch(`https://nekoweb.org/api/site/info/${domain}`);
+                     const json = await request.json();
+                  
+                     const updated = new Date(json.updated_at).toLocaleDateString(); // Formats Last Updated text
+                     const created = new Date(json.created_at).toLocaleDateString(); // Formats Creation Date text
+                  
+                     if (document.getElementById("created"))
+                       document.getElementById("created").innerHTML =
+                         `<em>Created</em>: ${created}`;
+                     if (document.getElementById("updated"))
+                       document.getElementById("updated").innerHTML =
+                         `<em>Updated</em>: ${updated}`;
+                     if (document.getElementById("visitors"))
+                       document.getElementById("visitors").innerHTML =
+                         `<em>Visits</em>: ${json.views}`;
+                     if (document.getElementById("followers"))
+                       document.getElementById("followers").innerHTML =
+                         `<em>Followers</em>: ${json.followers}`;
+                   } catch (error) {
+                     console.error(error);
+                     // If you wish to insert some fallback here, you may do so!
+                   }
+                  })();		   
+                  		   
+                  		   
+               </script>
+            </div>
+            <!------Row 3 (Marquees) Start------->
+            <div class="third-row">
+               <!-------Marquee start-------->
+               <div class="marquee">
+                  <ul class="marquee__content">
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/doastamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/mdudstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/huniepopstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/mercystamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/pianostamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/nstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/Kainestamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/Dvastamp.jpeg" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/flowerstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/Stamp2.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/anotherstaqmp.gif" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/catstampo.gif" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/Marinstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/hidik.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/gothic.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/collectmypages.png" /></li>
+                  </ul>
+                  <!-- Mirrors the content above -->
+                  <ul class="marquee__content" aria-hidden="true">
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/doastamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/mdudstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/huniepopstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/mercystamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/pianostamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/nstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/Kainestamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/Dvastamp.jpeg" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/flowerstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/Stamp2.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/anotherstaqmp.gif" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/catstampo.gif" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/Marinstamp.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/hidik.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/gothic.png" /></li>
+                     <li><img class="stamp" src="https://file.garden/aOCBrSuXPw8tOlnO/collectmypages.png" /></li>
+                  </ul>
+               </div>
+            </div>
+            <!------Bottom row start------->
+            <div class="forth-row">
+               <!---bottom-row-left-side--->
+               <div class="graphic-con">
+                  <div class="gamegif"></div>
+                  <img class="div" src="https://file.garden/aOCBrSuXPw8tOlnO/Musicdivider.gif" />
+                  <div class="textbox">
+                     <b>
+                        <i>
+                           <scriptfortextbox>i adore...❤︎</scriptfortextbox>
+                        </i>
+                     </b>
+                     final fantasy, dmc,
+                     nier, mysmes, vocaloid, resident evil,
+                     DOA + ninja gaiden, tekken, pizzicato5, studio ghibli, RWBY,
+                     pokemon, overwatch, mydressupdarling, PASWG, SAO, huniepop, denpa visual novels + eroges,
+                     yuri, yaoi, nintendo, marvel + dc, splatoon
+                     <br /><br />
+                     <img src="https://file.garden/aOCBrSuXPw8tOlnO/blackcrown.gif" style="width:40px;float:right" />
+                     <b>
+                        <i>
+                           <scriptfortextbox> casual indulges... </scriptfortextbox>
+                        </i>
+                     </b>
+                     persona, yumenikki, mk1, nso,
+                     the arcana, love and deep space, sdv, ddlc, arcane,
+                     bg3, saya no uta, deresute, jjk, csm, valorant, scott pilgrim, alnst,
+                     enstars, bandori, signalis, funger,coe33, shining hearts, muramasa, 
+                     castlevania, bayonetta, deltarune, kingdom hearts, hades, lolipop chainsaw, + more (ask!)
+                     <br /><br />
+                     <b>
+                        <i>
+                           <scriptfortextbox>i enjoy … </scriptfortextbox>
+                        </i>
+                     </b>
+                     cosplaying❤︎, figure + merch collecting, video-gaming ( PC + consoles !), manhwa/manga reading!!, digital art, writing, coding, editing,
+                     makeup art! (gal + douyin), hanging out with my lovely friends!, socializing LOTS, PARTIEEES!!❤︎, movies, shopping!!, 
+                     listening to all sorts of music! (check my spotify mueheh) + more! (ask!!!!)
+                     <br /><br />
+                     <b>
+                        <i>
+                           <scriptfortextbox> i am …  </scriptfortextbox>
+                        </i>
+                     </b>
+                     dva, tifa lockhart❤︎, marin kitagawa❤︎, kangel❤︎(nso), asuna yuuki❤︎ (sao)
+                     kyu sugardust❤︎, kaori miyazono❤︎, panty anarchy❤︎, zero❤︎ (drakengard),
+                     kaine❤︎ (nier), lady ❤︎(dmc), ada wong❤︎, harley quinn❤︎, misa amane❤︎,
+                     rinoa heartilly❤︎, jinx❤︎, yang xiao long❤︎, lili rochefort❤︎, shiki
+                     ichinose❤︎(deresute), nyo tengu❤︎ (doa), felicia hardy❤︎,
+                     howl jenkins❤︎, nao yoshikawa❤︎(gmc), seraphine❤︎, kiki❤︎(kds),
+                     707❤︎(mymes), hyuna❤︎(alnst), palutena❤︎, (KI), melty du granite❤︎(SH), shantae❤︎, lucky chloe❤︎, zelda❤︎(tp), kotone❤︎(p3), 
+                  </div>
+               </div>
+               <!---bottom-row-middle---->
+               <div class="bottom-row-middle">
+                  <div class="button">
+                     <img class="blinkie" src="https://file.garden/aOCBrSuXPw8tOlnO/Fixedblinkie.gif" />
+                  </div>
+                  <div class="update">
+                     <div class="update-header">
+                        <b>UPDATE LOGS!</b>
+                     </div>
+                     <div class="update-log">
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2026年3月21日: </i></b> diary + "my info" and "my faves" update ! ! !
+                        <br/><br/>
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2026年2月18日: </i></b> diary update ! ! !
+                        <br/><br/>
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2026年1月29日: </i></b> added stuff i enjoy bottom left !
+                        <br/><br/>
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2026年1月1日: </i></b> long diary update + diary archive !
+                        <br/><br/>
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年12月11日: </i></b> diary winter theme + update !
+                        <br/><br/>
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年11月26日: </i></b> added blinkie box !
+                        <br /><br />
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年11月8日: </i></b> diary update !
+                        <br /><br />
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年11月8日: </i></b> added info + char box !
+                        <br /><br />
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年11月1日: </i></b> added more stuff !
+                        <br /><br />
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年10月14日: </i></b> diary update! (web still WIP) !
+                        <br /> <br />
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年10月13日: </i></b> website being renovated !
+                        <br /> <br />
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年10月9日: </i></b> updated diary entry !
+                        <br /> <br />
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年10月6日: </i></b> new diary entry !
+                        <br /> <br />
+                        <img class="pixel" src="https://file.garden/aOCBrSuXPw8tOlnO/Gothiclolita.gif" />
+                        <b><i>2025年10月6日: </i></b> offical launch !
+                     </div>
+                  </div>
+               </div>
+               <!---bottom-row-right-side--->
+               <div class="chatbox-holder">
+                  <iframe style="height:100%; width:100%;" src="chatbox/chatboxs.html">
+                  </iframe>
+               </div>
+               <!-----Lil figurine img----------->
+               <img class="figure" src="https://file.garden/aOCBrSuXPw8tOlnO/Figure.gif" style="z-index:1000;" />
+            </div>
+         </div>
+         <!----------------Additional sections start---------------->
+         <!----Extra con start---->
+         <div id="extra" class="extra-con">
+            Extra . . . ♪
+            <div class="extra-flex">
+               <div class="extra-flex-left">
+                  <div class="extra-info" style="overflow: auto;">
+                     extra info + lovely sites ♪ ♪ ♪
+                     <br />
+                     i am half salvadoran and honduran, born + living in the US. (MD to be exact) (.❛ ᴗ ❛.)
+                     <br />
+                     i am an adult, freshman in college and consider myself to be a gyaru ! (reiwa ane gal)
+                     <br />
+                     <img src="https://file.garden/aOCBrSuXPw8tOlnO/catspin.gif" style="width:30px;float:center;" />
+                     <center>
+                        my button ! (๑ᵔ⤙ᵔ๑)
+                     </center>
+                     <img class="her_button" style="width:90px;" src="https://file.garden/aOCBrSuXPw8tOlnO/Fixedblinkie.gif" />
+                     <textarea>
+               &lt;a href="https://her.nekoweb.org/"&gt;
+                &lt;img src="https://file.garden/aOCBrSuXPw8tOlnO/Fixedblinkie.gif"/&gt;
+                &lt;/a&gt;
+                </textarea>
+                     <br /> <br />
+                     <center>
+                        <a href="https://yumejoshi.nekoweb.org/">
+                        <img src="https://yumejoshi.nekoweb.org/IMG_6566.jpeg" />
+                        </a>
+                        <br />
+                        <small>shu was here
+                        <br /> and helped code hehe 
+                        </small>
+                     </center>
+                  </div>
+               </div>
+               <div class="extra-flex-right">
+                  <img src="https://file.garden/aOCBrSuXPw8tOlnO/dollmarin.png"
+                     style="width:290px; display:block; margin:0 auto; position:absolute; top:70px;transform:translateX(250px);z-index:1;pointer-events:none; " />
+                  <div class="extra-graphic">
+                     <a href="https://nyscyra.nekoweb.org/">
+                     <img src="https://nyscyra.nekoweb.org/img/button.png">
+                     </a>
+                     <a href="https://lilithdev.neocities.org/">
+                     <img src="https://lilithdev.neocities.org/buttons/lilithdevbtn.gif">
+                     </a>
+                     <a href="https://kawaii.nekoweb.org/">
+                     <img src="https://kawaii.nekoweb.org/images/buttons/kawaiizuki.gif">
+                     </a>
+                     <a href="https://soni.nekoweb.org/">
+                     <img src="https://file.garden/aOCBrSuXPw8tOlnO/soniweb.gif">
+                     </a>
+                     <a href="https://4ster.nekoweb.org/">
+                     <img src="https://files.catbox.moe/fgldew.gif">
+                     </a>
+                     <a href="https://rice.place/" target="_blank">
+                     <img src="https://rice.nekoweb.org/button/riceus.gif">
+                     </a>
+                     <a href="https://pipi.nekoweb.org/">
+                     <img src="https://i.postimg.cc/htzZyv8c/pipibutton4.gif">
+                     </a>
+                     <a href="https://champagne.nekoweb.org">
+                     <img src="https://champagne.nekoweb.org/素材/champagne_88x31.gif" width="88" height="31" title="champagne">
+                     </a>
+                     <a href="https://treflemefle.nekoweb.org/" target="_blank"><img src="https://file.garden/Ztqjvb3upRXqoA_3/Buttons/meflebutton-2.gif">
+                     </a>
+                     <a href="https://angs-corner.nekoweb.org/"><img src="https://i.imgur.com/rd7l8WZ.gif" referrerpolicy="no-referrer"/>
+                     </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="marin">
+            <img src="https://file.garden/aOCBrSuXPw8tOlnO/Bunnycharlotte.png" style="position:absolute;z-index:-1;top:0;right:-360px;height:600px;transform:rotate(10deg);">
+      </div>
+      <!-------Sound effect when button is clicked---------->
+      <script>
+         // Mouseover/ Click sound effect- by JavaScript Kit (www.javascriptkit.com)
+         // Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
+          
+         //** Usage: Instantiate script by calling: var uniquevar=createsoundbite("soundfile1", "fallbackfile2", "fallebacksound3", etc)
+         //** Call: uniquevar.playclip() to play sound
+          
+         var html5_audiotypes={ //define list of audio file extensions and their associated audio types. Add to it if your specified audio file isn't on this list:
+         "mp3": "audio/mpeg",
+         "mp4": "audio/mp4",
+         "ogg": "audio/ogg",
+         "wav": "audio/wav"
+         }
+          
+         function createsoundbite(sound){
+         var html5audio=document.createElement('audio')
+         if (html5audio.canPlayType){ //check support for HTML5 audio
+         for (var i=0; i<arguments.length; i++){
+         var sourceel=document.createElement('source')
+         sourceel.setAttribute('src', arguments[i])
+         if (arguments[i].match(/\.(\w+)$/i))
+         sourceel.setAttribute('type', html5_audiotypes[RegExp.$1])
+         html5audio.appendChild(sourceel)
+         }
+         html5audio.load()
+         html5audio.playclip=function(){
+         html5audio.pause()
+         html5audio.currentTime=0
+         html5audio.play()
+         }
+         return html5audio
+         }
+         else{
+         return {playclip:function(){throw new Error("Your browser doesn't support HTML5 audio unfortunately")}}
+         }
+         }
+          
+         //Initialize two sound clips with 1 fallback file each:
+          
+         var mouseoversound=createsoundbite("https://file.garden/ZlKNlprkUEDiwwYi/sound-effect")
+         var clicksound=createsoundbite("https://file.garden/ZlKNlprkUEDiwwYi/sound-effect")
+         
+         
+         var playPromise = video.play();
+         if (playPromise !== undefined) {
+           playPromise.then(_ => {
+             // Automatic playback started!
+           }).catch(error => {
+             // Auto-play was prevented or interrupted.
+           });
+         }
+          
+      </script>
+	 <!----------Disable right clicks---------------------->
+	  <!---
+<script>
+
+  //Disable right mouse click Script
+  //By Maximus (maximus@nsimail.com) w/ mods by DynamicDrive
+  //For full source code, visit http://www.dynamicdrive.com
+
+  var message = "If you’re reading this, I know exactly who you are stalker and I  01001100 01101111 01110110 01100101 00100000 01111001 01101111 01110101 ♡";
+
+
+  ///////////////////////////////////
+  function clickIE4() {
+    if (event.button == 2) {
+      alert(message);
+      return false;
+    }
+  }
+
+  function clickNS4(e) {
+    if (document.layers || document.getElementById && !document.all) {
+      if (e.which == 2 || e.which == 3) {
+        alert(message);
+        return false;
+      }
+    }
+  }
+
+  if (document.layers) {
+    document.captureEvents(Event.MOUSEDOWN);
+    document.onmousedown = clickNS4;
+  }
+  else if (document.all && !document.getElementById) {
+    document.onmousedown = clickIE4;
+  }
+
+  document.oncontextmenu = new Function("alert(message);return false")
+
+	 </script>
+---->
+   </body>
+</html>
