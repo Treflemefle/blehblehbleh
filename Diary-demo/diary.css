@@ -1,0 +1,134 @@
+::-webkit-scrollbar {
+	background-color:transparent;
+	width:25px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(
+    to right,
+    transparent calc(50% - 1px),
+    hotpink calc(50% - 1px),
+    hotpink calc(50% + 1px),
+    transparent calc(50% + 1px)
+  );
+}
+
+::-webkit-scrollbar-thumb {
+background: #ffdbec;
+background: linear-gradient(0deg, rgba(255, 219, 236, 1) 0%, rgba(255, 163, 205, 1) 39%, rgba(255, 122, 184, 1) 57%, rgba(255, 133, 188, 1) 72%, rgba(255, 217, 234, 1) 98%);
+	border:3px solid ;
+border-image: linear-gradient( rgba(255, 245, 249, 1) 0%, rgba(204, 208, 222, 1) 57%, rgba(255, 255, 255, 1) 69%, rgba(245, 250, 255, 1) 96%) 1;
+	outline:1px solid black;
+}
+
+	
+::-webkit-scrollbar-button:horizontal:start:decrement,
+::-webkit-scrollbar-button:horizontal:end:increment,
+::-webkit-scrollbar-button:vertical:start:decrement,
+::-webkit-scrollbar-button:vertical:end:increment {
+  display: block;
+}
+
+::-webkit-scrollbar-button:vertical:start {
+  height: 25px;
+  background-image: url("https://files.catbox.moe/d6ofxh.png");
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+::-webkit-scrollbar-button:vertical:end {
+  height: 25px;
+  background-image: url(https://files.catbox.moe/ew3ii9.png);
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+::-webkit-scrollbar-button:horizontal:start {
+  width: 16px;
+  background-image: svg-load("./icon/button-left.svg");
+}
+::-webkit-scrollbar-button:horizontal:end {
+  width: 16px;
+  background-image: svg-load("./icon/button-right.svg");
+}
+/*HTML reset*/	
+      *, ::before, ::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      }
+
+
+/*Body*/
+body{
+	font-family:ms gothic;
+	background-color:transparent;
+	margin-top:80px;
+	margin-left:20px;
+	margin-right:20px;
+}
+
+/*CSS of date and time*/
+	.date-and-feeling{
+		font-size:20px;
+		display:flex;
+		flex-direction:column;
+		gap:5px;
+		margin:30px 0px;
+		color:white;
+         text-shadow: 0 1px #b80f63, 1px 0px #b80f63, 0 -1px #b80f63, -1px 0px #b80f63, 1px -1px #b80f63, -1px 1px #b80f63, 1px 1px #b80f63, -1px -1px #b80f63;
+	}
+/*Text inside of p tags*/	
+	 p{
+		font-size:18px;
+		font-family:ms gothic;
+		color:white;
+		color:white;
+         text-shadow: 0 1px #b80f63, 1px 0px #b80f63, 0 -1px red, -1px 0px #b80f63, 1px -1px #b80f63, -1px 1px #b80f63, 1px 1px #b80f63, -1px -1px #b80f63;
+		margin:15px 0;
+	}
+	
+/*Japanese quotation tags here - remove if unwanted!!*/
+	 p::before{
+		content:'「 ';
+		margin-right:-6px;
+	}
+	
+	 p::after{
+		content:' 」';
+		margin-left:-14px;
+	}
+	
+	/*Hotpink text with white outline, used for character names*/
+	.name-text-style{
+		color:#b80f63;
+         text-shadow: 0 1px white, 1px 0px white, 0 -1px white, -1px 0px white, 1px -1px white, -1px 1px white, 1px 1px white, -1px -1px white;
+	}
+
+/*Brackets on names, remove if unwanted.*/
+	.name-text-style::before{
+		content:'【';
+		margin-right:5px;
+	}
+	
+	.name-text-style::after{
+		content:'】';
+		margin-left:5px;
+	}
+	/*white text with blue outline (could be good to use for quotes/emphasized sentences/etc....)*/	
+	.alt-text-style{
+		color:white;
+         text-shadow: 0 1px #1e4fa8, 1px 0px #1e4fa8, 0 -1px #1e4fa8, -1px 0px #1e4fa8, 1px -1px #1e4fa8, -1px 1px #1e4fa8, 1px 1px #1e4fa8, -1px -1px #1e4fa8;		
+	}
+
+/*That cute lil divider that Princess Lover uses!!*/
+	.divider-1{
+		background-image:url(https://files.catbox.moe/yroxuo.png);
+		margin:0 auto;
+		background-size:contain;
+		background-position: center;
+		background-repeat:no-repeat;
+		height:20px;
+		width:100%;
+		filter: drop-shadow(0px 0px 2px #98102f);
+		
+	}
+	
