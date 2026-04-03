@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Diary Page</title>
+      <link rel="icon" type="img/x-icon" href="http://decome.lolipop.jp/insyoku/kudamono/pic26.gif" />
+      <!--Basic Meta tags yipee----->
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <!------Style Tags-------------->
+      <style>
+         /*SCROLLBAR Starts here, this css does not work on firefox ;-;*/	
+         ::-webkit-scrollbar {
+         background-color:transparent;
+         width:20px;
+         }
+         ::-webkit-scrollbar-track {
+         background: linear-gradient(
+         to right,
+         transparent calc(50% - 1px),
+         hotpink calc(50% - 1px),
+         hotpink calc(50% + 1px),
+         transparent calc(50% + 1px)
+         );
+         }
+         ::-webkit-scrollbar-track:horizontal {
+         background: linear-gradient(
+         to bottom,
+         transparent calc(50% - 1px),
+         hotpink calc(50% - 1px),
+         hotpink calc(50% + 1px),
+         transparent calc(50% + 1px)
+         );
+         }
+         ::-webkit-scrollbar-thumb {
+         background: #ffdbec;
+         background: linear-gradient(0deg, rgba(255, 219, 236, 1) 0%, rgba(255, 163, 205, 1) 39%, rgba(255, 122, 184, 1) 57%, rgba(255, 133, 188, 1) 72%, rgba(255, 217, 234, 1) 98%);
+         border:3px solid ;
+         border-image: linear-gradient( rgba(255, 245, 249, 1) 0%, rgba(204, 208, 222, 1) 57%, rgba(255, 255, 255, 1) 69%, rgba(245, 250, 255, 1) 96%) 1;
+         outline:1px solid black;
+         }
+         ::-webkit-scrollbar-button:horizontal:start:decrement,
+         ::-webkit-scrollbar-button:horizontal:end:increment,
+         ::-webkit-scrollbar-button:vertical:start:decrement,
+         ::-webkit-scrollbar-button:vertical:end:increment {
+         display: block;
+         }
+         ::-webkit-scrollbar-button:vertical:start {
+         height: 25px;
+         background-image: url("https://files.catbox.moe/d6ofxh.png");
+         background-size:contain;
+         background-repeat:no-repeat;
+         }
+         ::-webkit-scrollbar-button:vertical:end {
+         height: 25px;
+         background-image: url(https://files.catbox.moe/ew3ii9.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         }
+         ::-webkit-scrollbar-button:horizontal:start {
+         height:25px;
+         background-image: url(https://files.catbox.moe/ew3ii9.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         }
+         ::-webkit-scrollbar-button:horizontal:end {
+         height: 25px;
+         background-image: url(https://files.catbox.moe/ew3ii9.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         }	
+         *, ::before, ::after {
+         box-sizing: border-box;
+         margin: 0;
+         padding: 0;
+         }
+         /*Place holder back background added here + pages whole font family can be changed here*/
+         body{
+         background: #211111;
+         background: linear-gradient(0deg, rgba(33, 17, 17, 1) 93%, rgba(94, 23, 23, 1) 100%);
+         background-attachment: fixed;
+         font-family:ms gothic;
+         }
+         /*Parent div of entire diary*/
+         .wrapper{
+         margin:1rem auto;
+         border:3px solid;		
+         border-image: linear-gradient( rgba(255, 245, 249, 1) 0%, rgba(204, 208, 222, 1) 17%, rgba(255, 255, 255, 1) 69%, rgba(245, 250, 255, 1) 96%) 1;
+         box-shadow: inset white 0 0 20px;
+         outline:1px solid black;
+         width:fit-content;
+         position:relative;
+         display:flex;
+         }
+         /*Back log header here*/
+         .wrapper::before{
+         content:'';
+         position:absolute;
+         top:0;
+         left:0;
+         width:100%;
+         height:100px;
+         background-image:url(https://files.catbox.moe/80slja.png);
+         background-size:cover;
+         background-repeat:no-repeat;
+         z-index:4;
+         }
+         /*Red footer image here*/
+         .wrapper::after{
+         content:'';
+         position:absolute;
+         bottom:0;
+         right:0;
+         width:100%;
+         height:80px;
+         background-image:url(https://files.catbox.moe/4vhdsf.png);
+         background-size:cover;
+         background-repeat:no-repeat;
+         z-index:4;
+         }
+         /*Charlotte background here, change to whatever you want :3*/
+         main{
+         background-image:url(https://files.catbox.moe/yoecl2.jpg);
+         background-size: 100% 100%;
+         width: 100%; /* Ensure the div has a defined size */
+         height: 660px; /* Ensure the div has a defined size */
+         padding:30px;
+         }
+         /*Adds the red overlay gradient over the background*/	
+         .red-overlay{
+         background: #781414;
+         background: linear-gradient(0deg, rgba(120, 20, 20, 0.16) 0%, rgba(143, 27, 27, 0.7) 29%, rgba(135, 14, 14, 0.74) 74%, rgba(102, 13, 13, 0.16) 100%);
+         width:100%;
+         height:100%;
+         position:absolute;
+         pointer-events: none;
+         top:0;
+         left:0;
+         z-index:1;
+         }
+         /*Page select title on top of navigation*/
+         #nav-title{
+         image-rendering: crisp-edges;
+         image-rendering: pixelated;
+         width:160px;
+         }
+         /*Parent div of nav*/
+         .nav-holder{
+         width:250px;
+         border:1px solid black;
+         display:flex;
+         flex-direction: column;
+         justify-content: flex-end;
+         z-index:3;
+         color:white;
+         }
+         /*Nav starts here*/
+         nav{
+         height:60%;
+         box-shadow: inset pink 0 0 10px;
+         background: #fa6464;
+         background: linear-gradient(0deg, rgba(250, 100, 100, 0.5) 0%, rgba(240, 29, 29, 0.74) 81%, rgba(237, 71, 71, 0.43) 100%);
+         border:3px solid;		
+         border-image: linear-gradient( rgba(255, 245, 249, 1) 0%, rgba(204, 208, 222, 1) 17%, rgba(255, 255, 255, 1) 69%, rgba(245, 250, 255, 1) 96%) 1;
+         outline:1px solid black;
+         list-style: none;
+         padding:10px;
+         overflow:auto;
+         }
+         /*Button look of links inside nav here*/
+         nav ul li{
+         margin:5px 0px;
+         text-align: right;
+         width:100%;
+         background-image:url(https://files.catbox.moe/dgva5e.png);
+         background-size:100% 100%;
+         height:50px;
+         transition:0.3s;
+         will-change: transform;
+         }
+         nav ul li:hover{
+         transform:scale(105%) translateY(-2px);
+         }
+         nav ul li a{
+         display: block;    
+         text-decoration: none; 
+         padding:10px 10px;
+         text-align:right;
+         height:100%;
+         color:white;
+         text-shadow: 0 1px #b80f63, 1px 0px #b80f63, 0 -1px red, -1px 0px #b80f63, 1px -1px #b80f63, -1px 1px #b80f63, 1px 1px #b80f63, -1px -1px #b80f63;
+         font-size:18px;
+         }
+         nav ul li a:visited{
+         color:white;
+         }
+         /*Adds a 'New!' icon to the first link on navs ul list, make sure that every new entry is the first li inside the ul for it to work*/
+         /* You could also just remove this too mwehee （￣︶￣）↗　 */
+         nav ul li:first-child::before {
+         content:url(https://files.catbox.moe/b3qvkp.gif);
+         left:10px;
+         bottom:10px;
+         position:absolute;
+         }
+         /*Container - you can change with width of it here if u want*/
+         .container{
+         width:800px;
+         height:100%;
+         flex:1;
+         overflow:auto;
+         z-index:2;
+         position:relative;
+         border:none;
+   	  -webkit-user-select: none; 
+  -ms-user-select: none;    
+  user-select: none;    
+         }
+         #back-button{
+         position:absolute;
+         content:'';
+         bottom:3px;
+         right:10px;
+         background-image:url(https://files.catbox.moe/e2iyxe.png);
+         background-size:contain;
+         background-repeat:no-repeat;
+         background-position:left;
+         height:50px;
+         width:50px;
+         transition:0.1s; /*Transition on hover*/
+         z-index:50;
+         } 
+         /*Makes the rew arrow glow on hover*/
+         #back-button:hover{
+         position:absolute;
+         content:'';
+         background-image:url(https://files.catbox.moe/s423ob.png);
+         background-repeat:no-repeat;
+         } 
+      </style>
+   </head>
+   <body>
+      <div class="wrapper">
+         <div class="nav-holder">
+            <img id="nav-title" src="https://files.catbox.moe/ntcvwh.png">
+            <nav>
+               <ul>
+	            <!---------Buttons that direct to your individual html pages! Put newest ones on top so that the 'new' button pops up next to them!---------->
+                  <li><a href="Diary-pages/template-page.html" target="entry">Diary entry template!</a></li>
+                  <li><a href="Diary-pages/032126.html" target="entry">03/21/26</a></li>
+                  <li><a href="Diary-pages/021826.html" target="entry">02/18/26</a></li>
+                  <li><a href="Diary-pages/010126.html" target="entry">01/01/26</a></li>
+                  <li><a href="Diary-pages/120625.html" target="entry">12/06/25</a></li>
+               </ul>
+            </nav>
+         </div>
+         <main>
+            <div class="red-overlay"></div>
+            <!---------Iframe that holds all diary entries! whatever page you put in src="" will be the one that is open by default when the page is first loaded.---------->
+            <!---Maybe you write a dedicated intro page to show before people look through your entries!!--->
+            <iframe class="container" src="/Diary-demo/Diary-pages/template-page.html" name="entry">
+            </iframe>
+         </main>
+         <!----BACk button, redirects to index page----->
+         <a href="/her.nekoweb.org/index.html" id="back-button"></a>
+      </div>
+   </body>
+</html>
