@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Chatbox - her.nekoweb.org</title>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+      <!----Stylesheets----------->
+      <link rel="stylesheet" href="chatbox.css?v=1">
+   </head>
+   <body>
+      <div id="chat-container-main">
+         <div id="chat-container">
+            <button id="load-older-button">load older</button>
+            <ul id="chat-messages"></ul>
+            <noscript>
+               <p style="padding:10px;text-align: center;">Chatbox requires Javascript to function, if you need to message me refer to my socials intead!</p>
+            </noscript>
+         </div>
+         <div id="username-container">
+            <div id="username-input-section">
+               <div class="input-wrapper">
+                  <input type="text" id="username-input" placeholder="Name (required) ">
+                  <input type="text" id="website-input" placeholder="Website (optional) ">
+               </div>
+               <div id="button-container">
+                  <button id="set-username-btn"> Set </button>
+               </div>
+            </div>
+            <div id="welcome-message">
+               <span class="username-display" id="display-username"></span>
+            </div>
+         </div>
+         <div id="chat-controls">
+            <div class="input-group">
+               <div id="emoji-picker" class="emoji-picker"></div>
+               <textarea id="chat-input" placeholder="Let the words fall out..."></textarea>
+               <div id="char-counter" class="char-counter">0/300</div>
+            </div>
+            <div class="button-group">
+               <button id="send-button">
+                  <div id="send-text">send!</div>
+               </button>
+               <button id="emoji-button" type="button">
+                  <div id="emoji-content">
+           <img src="https://file.garden/aOCBrSuXPw8tOlnO/graycrown_pixel">
+                  </div>
+               </button>
+            </div>
+         </div>
+      </div>
+      <script type="module" src="chat.js?v=1"></script>	
+   </body>
+</html>
