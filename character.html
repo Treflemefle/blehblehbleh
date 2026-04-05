@@ -83,12 +83,10 @@
          });
       </script>
       <style>
-		 
          @font-face{
          font-family: 'porcsha';
          src:url(https://file.garden/aOCBrSuXPw8tOlnO/fonts/911porschav3.ttf) format('truetype');
          }
-
          /*Resets all elements with default margins/padding*/
          *, ::before, ::after {
          box-sizing: border-box;
@@ -102,35 +100,34 @@
          background-size:100% 100%;
          z-index:1;
          }
-        .header h1{
+         .header h1{
          text-align: center;
-		   margin:3px 0;
-		   font-size:30px;
-		font-family:'porcsha';
-		     letter-spacing: 10px;
-    text-shadow: 0 0 3px #e6dfe1, 0 0 3px #e6dfe1, 0 0 3px #e6dfe1, 0 0 3px #e6dfe1, 0 0 20px #e6dfe1, 0 0 3px #e6dfe1, 0 0 70px #e6dfe1;
-filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
+         margin:3px 0;
+         font-size:30px;
+         font-family:'porcsha';
+         letter-spacing: 10px;
+         text-shadow: 0 0 3px #e6dfe1, 0 0 3px #e6dfe1, 0 0 3px #e6dfe1, 0 0 3px #e6dfe1, 0 0 20px #e6dfe1, 0 0 3px #e6dfe1, 0 0 70px #e6dfe1;
+         filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
          }
-		 
-		 .header span{
-	         text-align: center;
-		   font-size:20px;
-		font-family:'porcsha';	
-			 		     letter-spacing: 10px;
-		 } 
-		 .header{
-			 background-image:url(https://files.catbox.moe/r25wyb.png);
-			 background-size:100% 100%;
-			 background-repeat:no-repeat;
-			 height:140px;
-			 position:absolute;
-			 width:100%;
-			 top:0;
-			 z-index:99;
-			 text-align:center;
-			 color:#8a8a8a;
-			 filter:opacity(0.9);
-		 }
+         .header span{
+         text-align: center;
+         font-size:20px;
+         font-family:'porcsha';	
+         letter-spacing: 10px;
+         } 
+         .header{
+         background-image:url(https://files.catbox.moe/r25wyb.png);
+         background-size:100% 100%;
+         background-repeat:no-repeat;
+         height:140px;
+         position:absolute;
+         width:100%;
+         top:0;
+         z-index:99;
+         text-align:center;
+         color:#8a8a8a;
+         filter:opacity(0.9);
+         }
          .selected.locked {
          filter:grayscale(0%)saturate(300%);
          border:1px solid red;
@@ -139,7 +136,17 @@ filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
          }
          .rooster{
          position:relative;
-		    margin-top:50px;
+         margin-top:50px;
+         }
+         .rooster::before{
+         background-image:url(https://files.catbox.moe/h712gg.webp);
+         background-size:100% 100%;
+         content:'';
+         position:absolute;
+         height:600px;
+         width:430px;
+         top:0;
+         left:170px;
          }
          .flex {
          display:flex;
@@ -412,7 +419,7 @@ filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
          -webkit-mask-repeat: no-repeat;
          -webkit-mask-position: center;
          -webkit-mask-size: 100% 100%;
-		    z-index:9999999;
+         z-index:9999999;
          }
          .player.locked:hover{
          transform:translateX(-10px);
@@ -438,7 +445,6 @@ filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
          background-image: url(https://file.garden/aOCBrSuXPw8tOlnO/Bunnycharlotte.png);
          background-position: -3px;
          }
-
          .character-wrapper{
          padding:6px 3px;
          margin-bottom: -29px; 
@@ -446,7 +452,6 @@ filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
          z-index:1;
          filter: drop-shadow(-6px -7px 0px #000000);
          }
-        
          .character-wrapper-2{
          padding:6px 3px;
          margin-bottom: -25px; 
@@ -468,8 +473,8 @@ filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
          top:300px;
          left:0px;
          background-image:url(https://files.catbox.moe/a29779.png);
-	    background-size:contain;
-		    background-repeat:no-repeat;
+         background-size:contain;
+         background-repeat:no-repeat;
          height:140px;
          word-wrap: break-word;
          width:350px;
@@ -477,50 +482,42 @@ filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
          .char-name {
          font-size: 32px;
          font-weight: bold;
-		    text-align:left;
-		    
-		    color:white;
-		    position:absolute;
-		    top:58px;
-		    right:-140px;
-		    width:100%;
-	     
+         text-align:left;
+         color:white;
+         position:absolute;
+         top:58px;
+         right:-140px;
+         width:100%;
          }
-		 
          .info-2{
          position:absolute;
          z-index:1000;
          top:300px;
          left:0px;
          background-image:url(https://files.catbox.moe/spfzhv.png);
-	    background-size:contain;
-		    background-repeat:no-repeat;
+         background-size:contain;
+         background-repeat:no-repeat;
          height:140px;
          word-wrap: break-word;
          width:350px;
-		 transform: scaleX(-1);
-		    
+         transform: scaleX(-1);
          }
          .char-name-2{
          font-size: 32px;
          font-weight: bold;
-		    text-align:left;
-		    
-		    color:white;
-		    position:absolute;
-		    top:50px;
-		    right:150px;
-
-	     
+         text-align:left;
+         color:white;
+         position:absolute;
+         top:50px;
+         right:150px;
          }
-
          .emblem{
          position:absolute;
          height:90vh;
          display:flex;
          flex-direction: column;
          justify-content: center;
-		    bottom:0;
+         bottom:0;
          }
          #emblem-bg{
          height:90%;
@@ -554,47 +551,69 @@ filter: drop-shadow(-10px 11px 7px rgba(44, 44, 44, 0.28));
          from { transform: rotate(0deg); }
          to { transform: rotate(360deg); }
          }
-		 
-		 .footer{
-			 position:absolute;
-			 bottom:0;
-			 width:100%;
-			 background-image:url(https://files.catbox.moe/471foi.webp);
-			 background-size:cover;
-			 height:200px;
-			 filter:opacity(70%);
-			 pointer-events: none;
-			 z-index:-1;
-		 }
+         .footer{
+         position:absolute;
+         bottom:0;
+         width:100%;
+         background-image:url(https://files.catbox.moe/471foi.webp);
+         background-size:cover;
+         height:200px;
+         filter:opacity(70%);
+         pointer-events: none;
+         z-index:-1;
+         }
+         @media screen and (max-width: 1300px) { 
+         .characters{
+         display:flex;
+         flex-direction:column;
+         margin-top:120px;
+         }
+         .footer,#player-1,#player-2{
+         display:none;
+         }
+         .player{
+         width:100%;
+         min-height:600px;
+         }
+         .rooster{
+         margin-top:-150px;
+         z-index:9999999999;
+         }
+         .player-one{
+         background-size:contain;
+         }
+         .player.Charlotte{
+         background-position:80px -100px;
+         background-size:800px;	
+         margin-top:-100px;
+         }
+         }
       </style>
    </head>
    <body>
-	   <div class="header">
-		   <h1>Character Select</h1>
-    <h2><span>Time</span></h2>
-    <h2><span id="counter">0</span></h2>
-		 <!--Timer script-->
-		   <script>
-
-let seconds = 0;
-const display = document.getElementById('counter');
-
-function updateTimer() {
-    seconds++;
-    display.textContent = seconds;
-}
-
-setInterval(updateTimer, 1000);
-		   </script>
-	   </div>
+      <div class="header">
+         <h1>Character Select</h1>
+         <h2><span>Time</span></h2>
+         <h2><span id="counter">0</span></h2>
+         <!--Timer script-->
+         <script>
+            let seconds = 0;
+            const display = document.getElementById('counter');
+            
+            function updateTimer() {
+                seconds++;
+                display.textContent = seconds;
+            }
+            
+            setInterval(updateTimer, 1000);
+            		   
+         </script>
+      </div>
       <div class="characters">
-         <div class="emblem">
-            <img id="emblem-bg" src="https://files.catbox.moe/h712gg.webp">
-         </div>
          <div class="player player-one ryu">
-		   <div class="info">
+            <div class="info">
                <h2 class="char-name"></h2>
-            </div> 
+            </div>
          </div>
          <div class="rooster">
             <div class="flex">
@@ -744,14 +763,14 @@ setInterval(updateTimer, 1000);
             </div>
          </div>
          <div class="player player-two Charlotte">
-		   <div class="info-2">
+            <div class="info-2">
                <h2 class="char-name-2">❤ Elia</h2>
-            </div> 
+            </div>
          </div>
       </div>
-	   <div class="footer"></div>
-	   <img src="https://files.catbox.moe/och1p8.png" style="position:absolute;bottom:60px;z-index:99999999;width:200px">
-	   <img src="https://files.catbox.moe/xb21qn.png" style="position:absolute;bottom:50px;right:0;z-index:99999999;width:205px">
+      <div class="footer"></div>
+      <img id="player-1" src="https://files.catbox.moe/och1p8.png" style="position:absolute;bottom:60px;z-index:99999999;width:200px">
+      <img id="player-2" src="https://files.catbox.moe/xb21qn.png" style="position:absolute;bottom:50px;right:0;z-index:99999999;width:205px">
       <script>
          // Mouseover/ Click sound effect- by JavaScript Kit (www.javascriptkit.com)
          // Visit JavaScript Kit at http://www.javascriptkit.com/ for full source code
